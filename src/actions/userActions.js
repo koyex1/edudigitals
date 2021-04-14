@@ -4,7 +4,7 @@ import { USER_SIGNIN_SUCCESS, USER_SIGNIN_FAIL, USER_VERIFICATION_REQUEST, USER_
 export const signin = (email, password) => async(dispatch) =>{
 dispatch({type: USER_SIGNIN_REQUEST, payload: {email, password}});
 try{
-    const {data} = await axios.post('/api/users/signin',{email, password});
+    const {data} = await axios.post('https://edudigital.herokuapp.com/api/users/signin',{email, password});
 		//action.type and action.payload
     dispatch({type: USER_SIGNIN_SUCCESS, payload:data });
     localStorage.setItem("userInfo", JSON.stringify(data));
@@ -30,7 +30,7 @@ export const signout = ()=> async(dispatch) =>{
 export const register = (userRegister) => async(dispatch) =>{
     dispatch({type: USER_REGISTER_REQUEST})
     try{
-        const {data} = await axios.post('/api/users/register', userRegister)
+        const {data} = await axios.post('https://edudigital.herokuapp.com/api/users/register', userRegister)
         console.log(data);
         dispatch({type: USER_REGISTER_SUCCESS, payload: data})
         localStorage.setItem('userInfo', JSON.stringify(data));
@@ -48,7 +48,7 @@ export const register = (userRegister) => async(dispatch) =>{
 export const userVerify = (status, id) => async(dispatch) =>{
     dispatch({type: USER_VERIFICATION_REQUEST})
     try{
-    const {data} = await axios.put(`/api/users/verify/${id}`, {status})
+    const {data} = await axios.put(`https://edudigital.herokuapp.com/api/users/verify/${id}`, {status})
         console.log(data);
         dispatch({type: USER_VERIFICATION_STATUS, payload: data})
 
@@ -67,7 +67,7 @@ export const userVerify = (status, id) => async(dispatch) =>{
 export const  pendingUsers= () => async(dispatch) =>{
     dispatch({type: USER_PENDING_REQUEST})
     try{
-        const {data} = await axios.get('/api/users/pendingusers')
+        const {data} = await axios.get('https://edudigital.herokuapp.com/api/users/pendingusers')
         dispatch({type: USER_PENDING_SUCCESS, payload: data})
     }
     catch(error){
@@ -83,7 +83,7 @@ export const  pendingUsers= () => async(dispatch) =>{
 export const  tutorDetails= (id) => async(dispatch) =>{
     dispatch({type: TUTOR_DETAILS_REQUEST})
     try{
-        const {data} = await axios.get(`/api/users/${id}`)
+        const {data} = await axios.get(`https://edudigital.herokuapp.com/api/users/${id}`)
         dispatch({type: TUTOR_DETAILS_SUCCESS, payload: data})
     }
     catch(error){
