@@ -1,6 +1,6 @@
 {
   "name": "frontend",
-  "proxy": "https://edudigitals.herokuapp.com",
+  "proxy": "http://127.0.0.1:5000",
   "homepage": "https://koyex1.github.io/edudigitals",
   "version": "0.1.0",
   "private": true,
