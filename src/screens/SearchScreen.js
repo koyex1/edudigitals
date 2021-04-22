@@ -7,6 +7,7 @@ import { searchTutors } from '../actions/searchActions';
 import { Link } from 'react-router-dom';
 import { Form, Slider, Select, Pagination, Input } from 'antd';
 import { languages, firstToUpper } from '../data/data';
+import img from '../images/dp.jpg'
 
 const { Option } = Select;
 const { Search } = Input;
@@ -176,7 +177,7 @@ function SearchScreen(props) {
       <div  className="search_results">
         <p className="tutor_name">{firstToUpper(search.firstName)} {firstToUpper(search.lastName)}</p>
         <div className="profile_info">
-          <img className="search_display_pic" src=" ../images/dp.jpg" />
+          <img className="search_display_pic" src={img} />
           <div className="space key_details">
             <p>{search.charge}/hr</p>
             <p>{search.rating} <i className='bx bxs-star' ></i></p>

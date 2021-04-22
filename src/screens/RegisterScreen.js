@@ -84,6 +84,7 @@ function RegisterScreen(props) {
     return (
         <div className="sign_container">
             <div className="welcome">
+              
                 Hi, We are glad you're here
             </div>
             <div className="sign_form">

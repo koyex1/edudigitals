@@ -204,7 +204,7 @@ display:flex;
 /*search bar*/
 .search_container{
   background-color: white;
-  width: 70%;
+  width:99%;
   margin: auto;
   border-radius: 8px;
   margin-top: 0px;
@@ -476,27 +476,26 @@ footer hr{
 .sign_container{
   display: flex;
   flex-direction: column;
-  width: 80%;
   margin: auto;
   margin-top: 20px;
-  align-items: flex-start;
   justify-content: center;
  
 }
 .welcome{
   font-family: 'Zilla Slab Highlight', cursive; 
-  font-size: 20px;
+  font-size: 40px;
   margin: auto;
 }
 .sign_form{
-  
-  width: 70%;
+ 
+  width: 95%;
+  margin: auto;
+  margin-top: 15px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   border: 2px solid black;
   padding: 30px 60px 30px 40px;
-  border-radius: 9px;
 }
 
 /* }
@@ -710,6 +709,14 @@ color: #c83737;
   .tutors_grid{
       grid-template-columns: 50% 50%;
   }
+
+  .search_container{
+    width: 70%;
+    
+  }
+  .sign_form{
+    width: 50%
+  }
   /* .key_details{
       display: flex;
       flex-direction: row;
@@ -791,6 +798,9 @@ color: #c83737;
   .sign_in_up{
       top: 53px;
   }
+  .services_header{
+    font-size: 50px;
+  }
 
 }
 
@@ -804,10 +814,7 @@ color: #c83737;
   .sign_in_up a{
       margin-left: 15px;
   }
-  .sign_container{
-      width: 750px;
-      
-  }
+  
 }
 
 

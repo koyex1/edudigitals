@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { tutorDetails } from '../actions/userActions';
 import { firstToUpper } from '../data/data';
+import img from '../images/dp.jpg';
 
 
 
@@ -30,7 +31,7 @@ function ProfileScreen(props) {
             <div className="profile_container">
                 <div className="image_rating_container">
                     <div className="image_container">
-                    <img className="profile_dp" src=" ../images/dp.jpg" />
+                    <img className="profile_dp" src={img} />
                     </div>
                     <div className="rating_container">
                         <p className="title_2">Rating: {tutorInfo && tutorInfo.rating}</p>

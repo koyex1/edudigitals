@@ -1,7 +1,7 @@
 import axios from "axios";
-import { USER_SIGNIN_SUCCESS, USER_SIGNIN_FAIL, USER_VERIFICATION_REQUEST, USER_VERIFICATION_FAIL, USER_VERIFICATION_STATUS, USER_SIGNIN_REQUEST, USER_SIGNOUT, USER_REGISTER_SUCCESS, USER_REGISTER_REQUEST, USER_REGISTER_FAIL, USER_UPDATE_PROFILE_REQUEST, USER_UPDATE_PROFILE_FAIL, USER_UPDATE_PROFILE_SUCCESS, USER_PENDING_REQUEST, USER_PENDING_SUCCESS, USER_PENDING_FAIL, TUTOR_DETAILS_REQUEST, TUTOR_DETAILS_SUCCESS, TUTOR_DETAILS_FAIL } from "../constants/userConstants";
+import { USER_SIGNIN_SUCCESS, USER_SIGNIN_FAIL, USER_VERIFICATION_REQUEST, USER_VERIFICATION_FAIL, USER_VERIFICATION_STATUS, USER_SIGNIN_REQUEST, USER_SIGNOUT, USER_REGISTER_SUCCESS, USER_REGISTER_REQUEST, USER_REGISTER_FAIL, USER_UPDATE_PROFILE_REQUEST, USER_UPDATE_PROFILE_FAIL, USER_UPDATE_PROFILE_SUCCESS, USER_PENDING_REQUEST, USER_PENDING_SUCCESS, USER_PENDING_FAIL, TUTOR_DETAILS_REQUEST, TUTOR_DETAILS_SUCCESS, TUTOR_DETAILS_FAIL, REVERIFICATION_DETAILS_REQUEST, REVERIFICATION_DETAILS_SUCCESS, REVERIFICATION_DETAILS_FAIL } from "../constants/userConstants";
 
-const endpoint = 'http://localhost:5000'
+const endpoint = 'https://edudigital.herokuapp.com'
 
 export const signin = (email, password) => async(dispatch) =>{
 dispatch({type: USER_SIGNIN_REQUEST, payload: {email, password}});
@@ -99,19 +99,10 @@ export const  tutorDetails= (id) => async(dispatch) =>{
     }
 }
 
-// export const  allContacts= () => async(dispatch) =>{
-//     dispatch({type: CONTACT_DETAILS_REQUEST})
-//     try{
-//         const {data} = await axios.get(`${endpoint}/api/users/${id}`)
-//         dispatch({type: CONTACT_DETAILS_SUCCESS, payload: data})
-//     }
-//     catch(error){
-//         dispatch({type: CONTACT_DETAILS_FAIL,
-//         payload: //i put the error in status 404 library so the long process to get to it
-//         error.response && error.response.data.message
-//         ?error.response.data.message  //error from data i put intentionally
-//         : error.message,        //error if i forgot to put an error message intentionally
-//         })
-//     }
-// }
+ export const  reverify = async (id,info) => {
+    
+         const {data} = await axios.put(`${endpoint}/api/users/reverify/${id}`, info)
+        return data;
+     
+}
 

@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import img from '../images/learning.jpg'
 
 function HomeScreen() {
     return (
@@ -16,7 +17,7 @@ function HomeScreen() {
                 </div>
             </div>
             <div class="learning_image">
-                <img src= " ../images/learning.jpg"/>
+                <img src= {img}/>
             </div>
         </div>
     
