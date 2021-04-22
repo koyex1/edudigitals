@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/edudigitals/static/css/main.fe4e661d.chunk.css",
-    "main.js": "/edudigitals/static/js/main.0ded3ecc.chunk.js",
-    "main.js.map": "/edudigitals/static/js/main.0ded3ecc.chunk.js.map",
+    "main.js": "/edudigitals/static/js/main.b1a8c857.chunk.js",
+    "main.js.map": "/edudigitals/static/js/main.b1a8c857.chunk.js.map",
     "runtime-main.js": "/edudigitals/static/js/runtime-main.c67032c5.js",
     "runtime-main.js.map": "/edudigitals/static/js/runtime-main.c67032c5.js.map",
     "static/css/2.26ca8a35.chunk.css": "/edudigitals/static/css/2.26ca8a35.chunk.css",
@@ -21,6 +21,6 @@
     "static/css/2.26ca8a35.chunk.css",
     "static/js/2.42d54d5f.chunk.js",
     "static/css/main.fe4e661d.chunk.css",
-    "static/js/main.0ded3ecc.chunk.js"
+    "static/js/main.b1a8c857.chunk.js"
   ]
 }
