@@ -13,6 +13,13 @@ import AdminSigninScreen from './screens/AdminSigninScreen';
 import VerifyUserScreen from './screens/VerifyUserScreen';
 import ProfileScreen from './screens/ProfileScreen';
 import ProfileEditScreen from './screens/ProfileEditScreen';
+import ChatScreen from './screens/ChatScreen';
+import ChatsScreen from './screens/ChatsScreen';
+import ReverificationScreen from './screens/ReverificationScreen';
+
+
+import 'antd/dist/antd.css'; 
+import MessageScreen from './screens/MessageScreen';
 
 
 
@@ -39,8 +46,13 @@ function App(props) {
       <Route path="/adminregister" component={AdminRegisterScreen} ></Route>
       <Route path="/adminsignin" component={AdminSigninScreen} ></Route>
       <Route path="/verifyuser" component={VerifyUserScreen} ></Route>
-      <Route path="/profile/:id" component={ProfileScreen} ></Route>
+      <Route path="/profile" component={ProfileScreen} ></Route>
       <Route path="/profileedit/:id" component={ProfileEditScreen} ></Route>
+      <Route path="/chat" component={ChatScreen} ></Route>
+      <Route path="/message" component={MessageScreen} ></Route>
+      <Route path="/reverify" component={ReverificationScreen} ></Route>
+      <Route path="/chats" component={ChatsScreen} ></Route>
+
 
 
 

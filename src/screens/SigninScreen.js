@@ -5,6 +5,9 @@ import TextField from '@material-ui/core/TextField';
 import { signin } from '../actions/userActions';
 import MessageBox from '../components/MessageBox';
 import { Link } from 'react-router-dom';
+import { Form, Input, Button, Checkbox } from 'antd';
+import { UserOutlined, LockOutlined } from '@ant-design/icons';
+import 'antd/dist/antd.css'; 
 
 
 
@@ -29,13 +32,13 @@ function SigninScreen(props) {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     
-
+  
     
 
-    const submitHandler = (e)=>{
-        e.preventDefault();
+    const onFinish = ()=>{
         dispatch(signin(email, password))
     }
+
     useEffect(()=>{
     if(userInfo){
         userInfo && props.history.push('/');
@@ -50,20 +53,48 @@ function SigninScreen(props) {
                 Hi, We are glad you're here
             </div>
             <div className="sign_form">
-                <div className="errorMessage"></div>
-                <MessageBox></MessageBox>
-                
-                <form className={classes.root} noValidate autoComplete="off">
-              
-                    <TextField onChange={(e)=>{setEmail(e.target.value)}} id="standard-basic" label="Email" />
-                    <TextField onChange={(e)=>{setPassword(e.target.value)}} id="standard-password-input" label="Password" type="password" autoComplete="current-password" />
-                    
-                    <div className="button_container">
-                    <button onClick={submitHandler} className="submit">Submit</button>  
-                    <div><Link to="/register"> Not Registered?</Link></div>
-                    </div>                    
+            <Form
+      name="normal_login"
+      className="login-form"
+      initialValues={{ remember: true }}
+      onFinish={onFinish}
+    >
+      <Form.Item
+        name="username"
+        rules={[{ required: true, message: 'Please input your Username!' }]}
+      >
+        <Input onChange={(e)=>{setEmail(e.target.value)}} prefix={<UserOutlined className="site-form-item-icon" />} placeholder="Username" />
+      </Form.Item>
 
-                </form>
+      <Form.Item
+        name="password"
+        rules={[{ required: true, message: 'Please input your Password!' }]}
+      >
+        <Input onChange={(e)=>{setPassword(e.target.value)}}
+          prefix={<LockOutlined className="site-form-item-icon" />}
+          type="password"
+          placeholder="Password"
+        />
+      </Form.Item>
+
+
+      <Form.Item>
+        {/* <Form.Item name="remember" valuePropName="checked" noStyle>
+          <Checkbox>Remember me</Checkbox>
+        </Form.Item> */}
+
+        <Link className="link_black bold_font login-form-forgot" href="#">
+          Forgot password
+        </Link>
+      </Form.Item>
+
+      <Form.Item>
+        <Button type="primary" htmlType="submit" className="login-form-button">
+          Log in
+        </Button> Or <Link className="link_black bold_font" href="/register"> Register Now!</Link>
+      </Form.Item>
+    </Form>
+                
             </div>
         </div>
     )

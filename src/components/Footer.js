@@ -1,3 +1,4 @@
+import { Link } from '@material-ui/core';
 import React, { Fragment } from 'react'
 
 function Footer() {
@@ -6,12 +7,12 @@ function Footer() {
         <div className="footer_section">
 <p>Follow us</p>
 <div> 
-    <a><i className='bx bxl-facebook-square'></i></a>
-    <a><i className='bx bxl-facebook-square'></i></a>
-    <a><i className='bx bxl-twitter' ></i></a>
-    <a><i className='bx bxl-instagram' ></i></a>
-    <a><i className='bx bxl-youtube' ></i></a>
-    <a><i className='bx bxl-linkedin-square'></i></a>
+    <Link><i className='link_color bx bxl-facebook-square'></i></Link>
+    <Link><i className='link_color bx bxl-facebook-square'></i></Link>
+    <Link><i className='link_color bx bxl-twitter' ></i></Link>
+    <Link><i className='link_color bx bxl-instagram' ></i></Link>
+    <Link><i className='link_color bx bxl-youtube' ></i></Link>
+    <Link><i className='link_color bx bxl-linkedin-square'></i></Link>
 </div>
 
 </div>

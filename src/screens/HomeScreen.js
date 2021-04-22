@@ -11,8 +11,8 @@ function HomeScreen() {
                 <p class="services_header">A 1000+ tutors just for you</p>
                 <p class="services_body">We connect tutors to students. Reviews from our students encourages us to take the audacios step to make things better for all users.</p>
                 <div class="services_button">
-                    <Link to="/search">Find a Tutor </Link>
-                    <Link to="/register">Sign Up</Link>
+                    <Link className='black_link' to="/search">Find a Tutor </Link>
+                    <Link className='black_link' to="/register">Sign Up</Link>
                 </div>
             </div>
             <div class="learning_image">

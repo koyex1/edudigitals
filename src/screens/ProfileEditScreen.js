@@ -11,9 +11,9 @@ function ProfileEditScreen() {
     const {userInfo} = userSignin
     console.log(userInfo._id)
 
-    useEffect(() => {
-        dispatch(tutorDetails(userInfo._id))
-    }, [])
+    dispatch(tutorDetails(userInfo._id))
+
+
     return (
         <div className="surrounding_body">
             <div className="profile_container">
