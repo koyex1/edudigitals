@@ -1,12 +1,14 @@
 
 import axios from "axios";
+import { LOCALHOST } from "../constants/constants";
 import { USER_SIGNIN_FAIL, USER_SIGNIN_REQUEST, USER_SIGNIN_SUCCESS } from "../constants/userConstants";
-const endpoint = 'http://localhost:5000'
+
+
 
 
 export const validateEmail = (token) => async(dispatch) =>{
     try{
-        const {data} = await axios.post(`${endpoint}/api/users/validateEmail/${token}`)
+        const {data} = await axios.post(`${LOCALHOST}/api/users/validateEmail/${token}`)
         //action.type and action.payload
         dispatch({type: USER_SIGNIN_SUCCESS, payload:data });
         localStorage.setItem("userInfo", JSON.stringify(data));
@@ -25,7 +27,7 @@ export const validateEmail = (token) => async(dispatch) =>{
     };
 
 export const sendChangePassword = async (changeInfo) => {
-    const {data} = await axios.post(`${endpoint}/api/users/changePassAuth/`, changeInfo)
+    const {data} = await axios.post(`${LOCALHOST}/api/users/changePassAuth/`, changeInfo)
     console.log(data)
     return data;
 

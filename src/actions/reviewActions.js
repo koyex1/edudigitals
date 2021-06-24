@@ -1,10 +1,11 @@
 import axios from "axios";
+import { LOCALHOST } from "../constants/constants";
 
-const endpoint = 'http://localhost:5000'
+
 
 export const  reviewPost = async (id, editedInfo) => {
     console.log(id)
-    const {data} = await axios.post(`${endpoint}/api/review/add/${id}`, editedInfo)
+    const {data} = await axios.post(`${LOCALHOST}/api/review/add/${id}`, editedInfo)
     console.log(data)
     return data;
 
@@ -12,7 +13,7 @@ export const  reviewPost = async (id, editedInfo) => {
 
 export const  getReviews = async (id, pageInfo) => {
     console.log(pageInfo)
-    const {data} = await axios.post(`${endpoint}/api/review/get/${id}`,  pageInfo)
+    const {data} = await axios.post(`${LOCALHOST}/api/review/get/${id}`,  pageInfo)
     console.log(data)
     return data;
 

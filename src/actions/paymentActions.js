@@ -1,9 +1,10 @@
 import axios from "axios";
+import { LOCALHOST } from "../constants/constants";
 
-const endpoint = "http://localhost:5000"
+
 
 export const  paymentSuccessful = async (paymentInfo) => {
- const {data} = await axios.post(`${endpoint}/api/payment/add`, paymentInfo)
+ const {data} = await axios.post(`${LOCALHOST}/api/payment/add`, paymentInfo)
     console.log(data)
     return data;
 

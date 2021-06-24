@@ -1,0 +1,1 @@
+export const LOCALHOST = 'https://edudigital.herokuapp.com' //'http://localhost:5000'

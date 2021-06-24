@@ -1,12 +1,12 @@
 import { io } from 'socket.io-client';
+import { LOCALHOST } from '../constants/constants';
 
-//const endpoint = 'https://edudigital.herokuapp.com'
-const endpoint = 'http://localhost:5000/'
-let socket = io(endpoint)
+
+let socket = io(LOCALHOST)
 
 if(JSON.parse(localStorage.getItem('userInfo'))){
     
-  socket = io(endpoint,
+  socket = io(LOCALHOST,
     {
         transports: ['websocket'],
         upgrade: false,
