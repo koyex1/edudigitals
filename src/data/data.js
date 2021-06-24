@@ -1,7 +1,13 @@
 export const firstToUpper = (word)=>{
 	return word.replace(word[0], word[0].toUpperCase())
 }
-
+export const pageLang = [
+	{'en': 'English'},
+	{'es-ES':'Spanish'},
+	{'it':'Italian'},
+	{'da':'Deutsch'},
+	{'ar': 'عربى'}
+]
 export const roles = [
 	'Tutor',
 	'Student',
@@ -50,7 +56,7 @@ export const languages =  [
 	'Divehi, Dhivehi, Maldivian',
 	'Dutch, Flemish',
 	'Dzongkha',
-	'english',
+	'English',
 	'Esperanto',
 	'Estonian',
 	'Ewe',

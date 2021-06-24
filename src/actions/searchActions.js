@@ -1,12 +1,15 @@
 import axios from "axios";
 import { SEARCH_SUCCESS, SEARCH_REQUEST, SEARCH_FAIL} from "../constants/searchConstants";
 
-const endpoint = 'https://edudigital.herokuapp.com'
+//const endpoint = 'https://edudigital.herokuapp.com'
+const endpoint = 'http://localhost:5000'
 
-export const searchTutors = (search, currentPage, limit, language, rating, charge) => async(dispatch) =>{
+
+
+export const searchTutors = (search, currentPage, limit, language, country, rating, charge) => async(dispatch) =>{
 dispatch({type: SEARCH_REQUEST});
 try{
-    const {data} = await axios.post(`${endpoint}/api/users/search`,{search, currentPage, limit, language, rating, charge});
+    const {data} = await axios.post(`${endpoint}/api/users/search`,{search, currentPage, limit, language, country, rating, charge});
 		//action.type and action.payload
        // console.log(data);
     dispatch({type: SEARCH_SUCCESS, payload: data });

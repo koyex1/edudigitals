@@ -5,6 +5,13 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
 import store from './store';
+import axios from 'axios';
+import './i18n'
+import i18next from 'i18next';
+
+const lang= localStorage.getItem('lang')
+axios.defaults.headers.common['Accept-Language'] = lang || 'en';
+i18next.changeLanguage(lang)
 
 ReactDOM.render(
   

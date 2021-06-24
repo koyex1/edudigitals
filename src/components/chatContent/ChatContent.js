@@ -7,9 +7,11 @@ import {firstToUpper} from "../../data/data";
 import { useSelector } from "react-redux";
 import {FileAddOutlined } from '@ant-design/icons';
 
-const Endpoint ='http://localhost:5000/';
+const endpoint ='http://localhost:5000/';
+//const endpoint = 'https://edudigital.herokuapp.com';
 
 let socket;
+socket = io(endpoint);
 
 export default function ChatContent(props){
   const messagesEndRef = useRef();
@@ -24,52 +26,65 @@ export default function ChatContent(props){
     const {userInfo} = userSignin;
     const senderId = userInfo._id;
 
-    socket = io(Endpoint);
-
     
-    socket.emit('loadMessages', senderId , recipientId)
-  
+  console.log("loner")
+  socket.emit('loadMessages', senderId , recipientId)
 
-  const scrollToBottom = () => {
-    messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
-  };
-
-
+//1. loading first message
   useEffect(() => {
-     
+    console.log("tell me something")
+    //socket.emit('loadMessages', senderId , recipientId)
     socket.on('initialMessages', allMessages=>{
       setMessages(allMessages)
-      // console.log(allMessages)
   })
- 
+  scrollToBottom();
+  }, [messages])
   
-      window.addEventListener("keydown", (e) => {
-        if (e.keyCode == 13) {
-          if (message != "") {
-            socket.emit('sendMessage', senderId, recipientId, message);
-            socket.emit('loadMessages', senderId , recipientId)
-            socket.on('initialMessages', allMessages=>{
-              setMessages(allMessages)
-              //
-          })
-          scrollToBottom();
-            //setMessage("");
-          }
-        }
-      });
-      scrollToBottom();
-    
-  }, [message,messages, recipientId, senderId])
+  //2. 2nd sending option
+  const sendingOptionTwo = ()=>{
+    if (message != "") {
+      socket.emit('sendMessage', senderId, recipientId, message);
+      socket.on('initialMessages', allMessages=>{
+        setMessages([...allMessages, message])
+    })
+    }
+    scrollToBottom();
+  }
 
-  
+//3. on ENTER button
+useEffect(() => {
+  window.addEventListener("keydown", (e) => {
+        
+    if (e.key == 'Enter') {
+ 
+      if (message != "") {
+        socket.emit('sendMessage', senderId, recipientId, message);
+       // socket.emit('loadMessages', senderId , recipientId)
+        socket.on('initialMessages', allMessages=>{
+          setMessages([...allMessages, message])
+      })
+      scrollToBottom();
+      }
+    }
+  });
+}, [messages])
+
+       
+      
+    
+//-------on input change for typing
   const onStateChange = (e) => {
     setMessage( e.target.value );
   };
 
- 
+  //scrool to bottom function
+  const scrollToBottom = () => {
+    messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
+  };
  
     return (
       <div className="main__chatcontent">
+        {console.log("render")}
         <div className="content__header">
           <div className="blocks">
             <div className="current-chatting-user">
@@ -92,7 +107,6 @@ export default function ChatContent(props){
         <div className="content__body">
           <div className="chat__items">
             {messages.map((message, index) => {
-              // console.log(message.sender + ' ' + senderId)
               return (
                 <ChatItem
                   animationDelay={index + 2}
@@ -117,7 +131,7 @@ export default function ChatContent(props){
               onChange={onStateChange}
             //  value={this.state.msg}
             />
-            <button className="btnSendMsg" id="sendMsgBtn">
+            <button onClick={sendingOptionTwo} className="btnSendMsg" id="sendMsgBtn">
             <i class='bx bx-send'></i>
             </button>
           </div>

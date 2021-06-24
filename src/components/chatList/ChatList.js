@@ -5,9 +5,11 @@ import io from 'socket.io-client';
 import { useSelector } from "react-redux";
 
 
-const Endpoint ='http://localhost:5000/';
+const endpoint ='http://localhost:5000/';
+//const endpoint = 'https://edudigital.herokuapp.com'
+
 let socket;
-socket = io(Endpoint);
+socket = io(endpoint);
 
 export default function ChatList (props)  {
 
@@ -20,7 +22,7 @@ export default function ChatList (props)  {
     socket.emit('getContacts', senderId)
     socket.on('contacts', (contacts)=>{
     setContacts(contacts)
-      // console.log(contacts);
+    
     })
   }, [contacts, senderId])
 

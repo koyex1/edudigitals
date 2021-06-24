@@ -5,99 +5,89 @@ import TextField from '@material-ui/core/TextField';
 import { signin } from '../actions/userActions';
 import MessageBox from '../components/MessageBox';
 import { Link } from 'react-router-dom';
-import { Form, Input, Button, Checkbox } from 'antd';
+import { Form, Input, Button, Checkbox, Alert } from 'antd';
+import { io } from 'socket.io-client';
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
-import 'antd/dist/antd.css'; 
+import 'antd/dist/antd.css';
+import socket from '../Config/socketConfig'
 
 
 
-const useStyles = makeStyles((theme) => ({
-    root: {
-        '& > *': {
-            margin: theme.spacing(1),
-            width: '30ch',
-        },
-    },
-}));
 
 function SigninScreen(props) {
-    const classes = useStyles();
-    //for receiving
-    //dispatch and select
-    const dispatch = useDispatch()
-    const userSignin = useSelector(state => state.userSignin)
-    const {userInfo, error} = userSignin;
+  //for receiving
+  //dispatch and select
+  const dispatch = useDispatch()
+  const userSignin = useSelector(state => state.userSignin)
+  const { userInfo, error } = userSignin;
 
-    //for sending out
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    
+  //for sending out
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  console.log(userSignin)
+
+
+
+  const onFinish = () => {
+    dispatch(signin(email, password))
   
+  }
+
+  useEffect(() => {
     
-
-    const onFinish = ()=>{
-        dispatch(signin(email, password))
+    if (userInfo && userInfo._id) {
+      socket.emit('login', (userInfo._id));
+        props.history.push('/');
     }
+  }, [userSignin, userInfo, props])
 
-    useEffect(()=>{
-    if(userInfo){
-        userInfo && props.history.push('/');
-    }
-    
-
-    },[props.history, userInfo])
-
-    return (
-        <div className="sign_container">
-            <div className="welcome">
-                Hi, We are glad you're here
-            </div>
-            <div className="sign_form">
-            <Form
-      name="normal_login"
-      className="login-form"
-      initialValues={{ remember: true }}
-      onFinish={onFinish}
-    >
-      <Form.Item
-        name="username"
-        rules={[{ required: true, message: 'Please input your Username!' }]}
-      >
-        <Input onChange={(e)=>{setEmail(e.target.value)}} prefix={<UserOutlined className="site-form-item-icon" />} placeholder="Username" />
-      </Form.Item>
-
-      <Form.Item
-        name="password"
-        rules={[{ required: true, message: 'Please input your Password!' }]}
-      >
-        <Input onChange={(e)=>{setPassword(e.target.value)}}
-          prefix={<LockOutlined className="site-form-item-icon" />}
-          type="password"
-          placeholder="Password"
-        />
-      </Form.Item>
+  return (
 
 
-      <Form.Item>
-        {/* <Form.Item name="remember" valuePropName="checked" noStyle>
-          <Checkbox>Remember me</Checkbox>
-        </Form.Item> */}
+    <div className="sign_container">
 
-        <Link className="link_black bold_font login-form-forgot" href="#">
-          Forgot password
-        </Link>
-      </Form.Item>
+      <div className="sign_form">
+      <div className="edu_form_header">Sign in  to Edudigitals</div>
 
-      <Form.Item>
-        <Button type="primary" htmlType="submit" className="login-form-button">
-          Log in
-        </Button> Or <Link className="link_black bold_font" href="/register"> Register Now!</Link>
-      </Form.Item>
-    </Form>
-                
-            </div>
+        {error && <div><Alert
+          message={error}
+          type="error"
+           />
+          <div className="edu_message_separator"> </div></div>}
+         
+         
+          <div >
+            <div className="edu_form field_margin">
+        <input onChange={e=>{setEmail(e.target.value)}} placeholder="Email" type="text" />
         </div>
-    )
+        <div className="edu_form">
+        <input onChange={e=>{setPassword(e.target.value)}} placeholder="Password" type="password" />
+        </div>
+        
+        
+        <button onClick={onFinish} className="message_button change_color adjust_signin">Sign In</button>
+
+        <div className="flex_or">
+          <hr className="reduce_line"/>
+          <div>OR</div> 
+          <hr className="reduce_line"/>
+        </div>
+
+        <Link to="/forgottenpassword"><div className="forgotten_password"> Forgotten Password</div> </Link>
+        <div className="flex_or">
+          <hr className="reduce_line"/>
+          <div>OR</div> 
+          <hr className="reduce_line"/>
+        </div>
+        <Link to="/register"><div className="forgotten_password"> Register</div> </Link>
+
+          </div>
+
+
+      </div>
+    </div>
+  )
 }
 
 export default SigninScreen;

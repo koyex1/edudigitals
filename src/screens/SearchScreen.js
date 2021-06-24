@@ -5,72 +5,59 @@ import { makeStyles } from '@material-ui/core/styles';
 import { useDispatch, useSelector } from 'react-redux';
 import { searchTutors } from '../actions/searchActions';
 import { Link } from 'react-router-dom';
-import { Form, Slider, Select, Pagination, Input } from 'antd';
-import { languages, firstToUpper } from '../data/data';
+import { Form, Slider, Select, Pagination, Input, Spin, Space } from 'antd';
+import { languages, firstToUpper, countryList } from '../data/data';
 import img from '../images/dp.jpg'
 
 const { Option } = Select;
 const { Search } = Input;
 
 
-
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    
-    '& > *': {
-      marginTop: theme.spacing(2),
-      color: "red",
-    },
-  },
-  slider: {
-    width: 100,
-  }
-}));
-
-
-
 function SearchScreen(props) {
-
+  const parameters = props.location.search.split('&');
+  const urlArray = []
+  for(let x of parameters){
+    urlArray.push(x.split('=')[1])
+  }
+  console.log(urlArray)
   var initialMin = 0;
   var initialRatingMax = 5;
   var initialChargeMax = 70;
   const lastPage = Number(localStorage.getItem('lastPage'))
   
-  const [rating, setRating] = useState([initialMin,initialRatingMax]);
-  const [language, setLanguage] = useState('');
-  const [charge, setCharge] = useState([initialMin,initialChargeMax]);
-  const [search, setSearch] = useState('');
+  const [rating, setRating] = useState((urlArray && urlArray[5] &&  urlArray[5].split(',')) || [initialMin,initialRatingMax]);
+  const [language, setLanguage] = useState(urlArray[3]||'');
+  const [country, setCountry] = useState(urlArray[4]|| '');
+  const [charge, setCharge] = useState((urlArray && urlArray[6] && urlArray[6].split(',')) || [initialMin,initialChargeMax]);
+  const [search, setSearch] = useState(urlArray[0]||'');
   const [active, setActive] = useState('true');
-  const [currentPage, setCurrentPage] = useState(lastPage);
+  const [currentPage, setCurrentPage] = useState(urlArray[1]||1);
   const [limit, setLimit] = useState(5);
-
-  //dispatch and selectors
   const dispatch = useDispatch();
   const searchResult = useSelector(state=>state.searchResult)
   const {searchInfo, error} = searchResult;
+  const [skilled, setSkilled] = useState();
+
+
+
+  
  
-
+  //-------USEEFFECT
   useEffect(() => {
-    props.history.push(`/search?page=${currentPage}&limit=${limit}&language=${language}&rating=${rating}&charge=${charge}`)
-    dispatch(searchTutors(search, currentPage, limit, language, rating, charge))
-  },[currentPage,charge,language,limit,props.history,rating, dispatch,search])
+    props.history.push(`/search?search=${search}&page=${currentPage}&limit=${limit}&language=${language}&country=${country}&rating=${rating}&charge=${charge}`)
+    dispatch(searchTutors(search, currentPage, limit, language, country, rating, charge))
+  },[currentPage])  
 
 
 
+//-------ONCHANGE FUNCTIONS
   const handleSearch = ()=>{
-    setCurrentPage(1);
+    setCurrentPage(1)
+    props.history.push(`/search?search=${search}&page=${currentPage}&limit=${limit}&language=${language}&country=${country}&rating=${rating}&charge=${charge}`)
+    dispatch(searchTutors(search, currentPage, limit, language, country, rating, charge))
   }
-
-  // const handlePagination = (e)=>{
-  //    setCurrentPage(e.target.innerText)
-     
-  // }
-
-
   const handleCharge = (newValue) => {
     setCharge(newValue);
-  
   };
 
   const handleRating = (newValue) => {
@@ -79,10 +66,7 @@ function SearchScreen(props) {
 
   const handlePagination = (page, pageSize)=>{
     setCurrentPage(page)
-    localStorage.setItem("lastPage", page.toString());
   }
-
-  const classes = useStyles();
 
 
 
@@ -95,21 +79,24 @@ function SearchScreen(props) {
       <div className="search_inputs">
         <div className="search_box">
 
-        <Search
-      placeholder="input search text"
-      allowClear
+<div className="edu_search_input">
+        <input
+        defaultValue={search}
+        type="text"
+      placeholder="Find Tutor or Subject..."
       onChange={e=>{setSearch(e.target.value)}}
-      enterButton="Search"
-      size="large"
-      onSearch={handleSearch}
     />
+    <button className="search_option1" onClick={handleSearch}>Search</button>
+    <button className="search_option2" onClick={handleSearch}><i class='bx bx-search'></i></button>
+
+    </div>
 
 
         </div>
         <div className="search_other_options spacing_left">
 
         <div className="edu_slider">
-        <h4>Rating<i class='edu_icon_size bx bxs-star'></i></h4>
+        <div className="side_side"><h4>Rating</h4><i class='check_position edu_icon_size bx bxs-star'></i></div>
         <Slider
         onChange={handleRating}
         max = {5}
@@ -123,11 +110,12 @@ function SearchScreen(props) {
         </div>
      
         <div className="edu_slider">
-        <h4>Charge <i class='edu_icon_size bx bx-dollar-circle' ></i></h4>
+        <div className="side_side"><h4>Charge</h4><i class='edu_icon_size bx bx-dollar-circle' ></i></div>
+
         <Slider
         onChange={handleCharge}
          range 
-         defaultValue={[0, 70]}
+         defaultValue={charge}
          max={70}
           marks={{
             0: '0',
@@ -136,62 +124,69 @@ function SearchScreen(props) {
         />
         </div>
       
+<div className="search_select">
 
-      <Form.Item
-        name="select"
-        label="Language"
-        searchValue
-        
-      >
-        <Select placeholder="Select language"
-        style={{ width: 200 }}
-        onChange={value=>{setLanguage(value)}}
-        
-        showSearch
-    optionFilterProp="children"
-    filterOption={(input, option) =>
-      option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
-    }
-        >
-          {languages.map((language) => (
-          <Option  value={language}>{language}</Option>
-          ))}
-        </Select>
-      </Form.Item>
-            
+<select onChange={e=>{setLanguage(e.target.value)}}>
+        <option value=''>Select a Language</option>
+         {languages.map((language)=>(<option value={language}>{language}</option>) )}
+        </select>
+
+
+      <select onChange={e=>{setCountry(e.target.value)}}>
+      <option value=''>Select a Country</option>
+         {countryList.map((country)=>(<option value={country}>{country}</option>) )}
+        </select>
+       </div>    
             
         </div>
 
       </div>
-      
+        {
+        !search && !language && rating.toString()==[0,5].toString() && charge.toString()==[0,70].toString() && !country &&
+        <div className="top_talents">TOP TALENTS</div>
+        }   
+          
       {
-        !search && !language && (rating == [initialMin, initialRatingMax])
-        && (charge == [initialMin, initialChargeMax]) &&
-        <div className="tutor_name spacing_left">Top Tutors</div>
-        
-      }
-           
-
-      { searchInfo && searchInfo.user.map( (search) =>(
+      !searchInfo?
+           (<div className="edu_search_spinner">
+               <Spin size="large"/> Searching...
+            </div>)
+      :
+      searchInfo && searchInfo.user.length==0 ?<div className="no_reviews">No search results</div>
+      :
+      (<div>
+      {searchInfo && searchInfo.user.map( (search) =>(
         <Link  className="link_black" to={`/profile?${search._id}&${search.firstName}&${search.lastName}`} key={search._id}>
       <div  className="search_results">
         <p className="tutor_name">{firstToUpper(search.firstName)} {firstToUpper(search.lastName)}</p>
         <div className="profile_info">
-          <img className="search_display_pic" src={img} />
+          <img className="search_display_pic"  src={`data:${search.profilePicture.contentType};base64,${Buffer.from(search.profilePicture.data.data).toString('base64')}`}/>
           <div className="space key_details">
-            <p>{search.charge}/hr</p>
-            <p>{search.rating} <i className='bx bxs-star' ></i></p>
-            <p>{search.subjects}</p>
+            <p>Charge: {search.charge} $/hr</p>
+            <p>Completed Lessons: {search.tutorials} </p>
+            <p>Rating: {search.rating} <i className='bx bxs-star' ></i></p>
+            <p>Languages: {search.language.split(',').map(
+              x=>(
+                  <div className="span_block">{x}</div>
+              )
+            )
+            
+            }</p>
+            <p>Subjects: {search.subjects.split(',').map(
+              x=>(
+                  <div className="span_block">{x}</div>
+              )
+            )
+            
+            }</p>
+            <p>Country: {search.country}</p>
           </div>
         </div>
-        <p className="about">{search.about}</p>
+        <p className="edu_search_about">{search.about}</p>
       </div>
       </Link>
-       ) )
-}
-
-      
-    <div className="edu_pagination" >
+       ) )}
+       <div className="edu_pagination" >
       
       <Pagination 
       current={currentPage} 
@@ -199,6 +194,14 @@ function SearchScreen(props) {
       pageSize={5}
       onChange={handlePagination} />
       </div>
+       </div>)
+       
+         
+         
+}
+
+      
+    
       
 
     </div>

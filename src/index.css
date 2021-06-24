@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Teko:wght@300;700&display=swap');
 /*font-family: 'Dela Gothic One', cursive;*/
 /*font-family: 'New Tegomin', serif;*/
 
@@ -12,12 +12,35 @@ html{
   font-family: 'Noto Sans HK', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  
+  margin: 0;
+  padding: 0;
 }
 body{
+  min-width: fit-content;
+}
+.website_color{
+  background-color: #060b26;
+  color:white;
+}
+
+.lang_select{
+  font-family: 'New Tegomin', serif;
+  font-size: 18px;
+  font-weight: bold;
+  height: 40px;
+  color: white;
+  border-radius: 5px;
+  margin-right: 5px;
+  padding-left: 8px;
+  background-color: #060b30;
+
+}
+
+.edu_body_child{
   display: flex;
-  min-height: 100vh;
   flex-direction: column;
+  height: 100vh;
+  align-content: space-between;
 }
 .surrounding_body{
   background-color: #e8e8e8;
@@ -59,6 +82,19 @@ button{
   cursor: pointer;
 }
 
+
+/*colors*/
+.success_color{
+  background-color: #4BB543 ;
+  color: white;
+}
+.danger_color{
+  background-color: #d80d0d;
+  color: white;
+}
+.edu_message_separator{
+  margin-bottom: 20px
+}
 .errorMessage{
   font-size: 13px;
   color:#d80d0d;
@@ -100,6 +136,9 @@ button{
   
 }
 .edu_account_box{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
   margin-right: 20px;
   color: white;
 }
@@ -202,6 +241,74 @@ display:flex;
 
 
 /*search bar*/
+.search_option1{
+  display: none;
+
+}
+.search_option2{
+}
+.bx-search{
+  font-size: 25px;
+}
+.span_block{
+  background-color: darkgray;
+  padding: 2px;
+  padding-left: 5px;
+  padding-right: 5px;
+  display: inline-block;
+  margin-bottom: 3px;
+  border-radius: 5px;
+  margin-right: 8px;
+}
+.edu_search_spinner{
+  font-family: 'New Tegomin', serif;
+  padding: 40px;
+  padding-left: 10px;
+  font-weight: bold;
+  font-size: 20px;
+
+}
+.edu_search_input{
+  padding-left: 30px;
+  height: 50px;
+  width: 100%;
+  font-size: 10px;
+}
+
+.edu_search_input>input{
+ width: 70%;
+ padding-left: 10px;
+ height: inherit;
+ border: none;
+ border: 1px solid #dbdbdb
+ 
+}
+
+.edu_search_input>button{
+  height: 99%;
+  position: relative;
+  top: 2px;
+  right: 3px;
+  width: 30%;
+  color: white;
+  background-color: #060b26;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  font-size: 20px;
+  font-family: 'New Tegomin', serif;
+}
+
+.search_select{
+  width: 100%;
+  padding-bottom: 30px;
+  height: 100px;
+  border: none;
+}
+.search_select>select{
+  width: 40%;
+  height: 40px;
+  margin-right: 20px;
+}
 .search_container{
   background-color: white;
   width:99%;
@@ -238,7 +345,31 @@ display:flex;
   padding-bottom: 25px;
 }
 
+/* table */
+.table_surrounding{
+padding: 30px;
+background-color: #dbdbdb;
+height: 110%;
+}
 
+.vet_table_surrounding{
+  background-color: #dbdbdb;
+  height: 110%;
+  }
+
+  .vet_red{
+    background-color: #d80d0d;
+    padding: 4px;
+    border-radius: 4px;
+    color: white;
+  }
+  .vet_green{
+    background-color: #4BB543;
+    padding: 4px;
+    border-radius: 4px;
+
+
+  }
 
 /*
 .search_box>input:active .search_box input{
@@ -249,8 +380,8 @@ display:flex;
 /* search profile */
 
 .search_display_pic{
-  width: 150px;
-  height: 100px;
+  width: 200px;
+  height: 200px;
 }
 .profile_info{
   display: flex;
@@ -262,11 +393,16 @@ display:flex;
 .tutor_name{
   font-size: 20px;
   font-family: 'New Tegomin', serif;
-  color: #c83737;
+  color: #060b26;
   font-weight: bold;
 }
 .profile_info .space{
   margin-left: 10px;
+}
+.search_inputs{
+  background-color: #f5f5f5;
+
+
 }
 .key_details{
   display: flex;
@@ -276,12 +412,18 @@ display:flex;
   color: goldenrod
 }
 .search_results, .spacing_left{
+  margin-top: 7px;
   padding: 0px 30px 0px 30px;
 }
-.about{
-  margin-top: 10px;
-  
+.search_results:hover{
+background-color: #f0f0f0;
 }
+.edu_search_about{
+  margin-top: 10px;
+  height:70px;
+  overflow: hidden;
+}
+
 
 
 
@@ -322,16 +464,19 @@ color: black;
 .services_button a, .message_button{
   color: black;
   margin-right: 20px;
-  padding: 10px 30px 10px 30px;
+  padding: 1px 15px 4px 15px;
   background-color: white;
-  border-radius: 10px;
+  border-radius: 5px;
+  margin-top: 20px;
   font-weight: bolder;
-  border: 3px solid #c83737;
+  border: 3px solid #060b26;
   font-family: 'New Tegomin', serif;
   
 }
+
 .services_button a:nth-child(even), .change_color{
-  background-color: #c83737;
+  background-color: #060b26;
+  color: white;
 }
 .services_header{
   font-size: 90px;
@@ -367,91 +512,161 @@ font-family: 'Zilla Slab Highlight', cursive;
   color: #c83737;
 }
 
-/*tutors profiles */
-.tutors_grid{
-
-display: grid;
-grid-template-columns: 100% ;
-grid-gap: 10px;
-width: 90%;
-margin: auto;
-margin-top: 20px;
+/*service cards*/
+.item1{
+  grid-area: item1;
 }
-.profile_box{
-  border-radius: 5px;
-  background-color: #f0f0f0;
+.item2{
+  grid-area: item2;
+}
+.item3{
+  grid-area: item3;
+}
+
+.edu_cards{
   font-weight: bold;
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
-.information_box{
-  display: flex;
-  padding-left: 5px;
-}
-
-.image_container{
-  height: 150px;
-  width: 40%;
-  border-radius: 5px;
-  position: relative;
+  display: grid;
+  grid-template-areas: 'item1'
+                       'item2'
+                       'item3' ;
   
+  justify-content: center;
+  padding-bottom: 40px;
 }
-.bx-play-circle{
-  font-size: 50px;
-  position: absolute;
-  right: 0px;
-  bottom: 0px;
-  color: #c83737;
-}
-.profile_image{
-  height: 150px;
-  border-radius: 5px;
-  width:  100%;
- 
-}
-.profile_text{
-  padding-left: 8px;
+.edu_card{
+  margin-top: 40px;
+  background-color: #060b26;
+  width: 230px;
+  padding: 10px;
   display: flex;
   flex-direction: column;
-  justify-content:space-around;
-  width: 60%;
-}
-.profile_text p{
-  width: 100%;
-  word-wrap: break-word;
-}
-.view{
-  outline: none;
-  border: none;
-  background-color: #c83737;
-  border-radius: 3px;
-  font-weight: bold;
-  width: 60%;
+  align-items: center;
+  text-align: center;
+  border-radius: 8px;
   color: white;
-  padding: 5px;
+  
 }
-.bxs-hand-up{
-  color: white;
+.edu_card_content{
+  font-size: 20px;
 }
-.last_info{
+.edu_card_image{
+}
+.edu_card_image>img{
+height: 80px;
+width: 80px;
+}
+
+/*verify page*/
+.edu_verify_button{
+  padding: 3px;
+  padding-left: 7px;
+  padding-right: 7px;
+  font-size: 17px;
+  border-radius: 4px;
+}
+.edu_verify_button>i{
+  font-size: 25px;
+}
+.edu_verify_icon{
+  font-size: 25px;
+}
+
+/*edit profile container */
+
+.edit_dp_bottom{
+  margin-bottom: 20px;
+}
+
+.edit_image_container{
   display: flex;
-  flex-direction: row;
+  padding-bottom: 10px;
+  flex-direction: column;
+}
+
+.profile_cart_button{
+  width: 40%;
+  padding: 3px;
+  border-radius: 5px;
+  font-family: 'New Tegomin', serif;
 
 }
-.last_info div{
-  margin-left: 7px;
-  font-size: 19px;
+
+.profile_cart_container{
+  display: flex;
+  flex-direction: row;
+  height: 40px;
+  margin-top: 10px;
+  position: relative;
 }
-.bxs-star{
-  color: goldenrod;
-  font-size: 22px;
+.nawa{
+  background-color: green;
+  position: relative;
+  height: 100%;
+
 }
+
+.hours_position{
+  font-weight: bold;
+  font-size: 15px;
+  position: absolute;
+  top: 20%;
+  
+}
+
+.profile_cart_container>input{
+  width: 20%;
+  height: 40px;
+  margin-left: 20px;
+  border: none;
+  border-radius: 5px;
+  border: 1px solid #dbdbdb;
+text-align: center;
+font-weight: bold;
+}
+.flex_edit_profile>input, .flex_edit_profile>select{
+  border-radius: 5px;
+  height: 40px;
+  width: 80%;
+  padding-left: 10px;
+  border: 1px solid #dbdbdb;
+  }
+  .cant_change{
+    background-color: #e8e8e8;
+  }
+  .empty_contact{
+    text-align: center;
+    padding-top: 60px;
+  }
+
+  .flex_edit_profile>textarea{
+    height: 100px;
+    width: 80%;
+    padding-left: 10px;
+    border: 1px solid #dbdbdb;
+    border-radius: 5px;
+    }
+
+    .edu_underline{
+      border-bottom: solid 1px #060b26;
+      margin-bottom: 20px;
+    }
+    .header_top{
+      padding-top: 20px;
+    }
+  
+
+
+
+
+/*footer*/
+
 footer{
   background-color: #f5f5f5;
-  margin-top: 20px;
-  color: #c83737;
+  padding-top:20px;
+  color: #060b26;
   text-align: center;
   font-weight: bold;
+  margin-top: 20px;
 
 
 }
@@ -461,7 +676,7 @@ footer{
   font-size: 40px;
 }
 .link_color, .link_color:hover, .link_color:visited, .link_color:active{
-  color: #c83737
+  color: #060b26
 }
 .footer_section i{
   font-size: 25px;
@@ -473,6 +688,21 @@ footer hr{
 
 
 /*SignIN and Register Page */
+.addMore{
+  cursor: pointer;
+  color: blue;
+  padding-bottom: 15px;
+  display: inline-block;
+  font-weight: bold;
+
+}
+.removeMore{
+  cursor: pointer;
+  color: #d80d0d;
+  padding-bottom: 15px;
+  font-weight: bold;
+
+}
 .sign_container{
   display: flex;
   flex-direction: column;
@@ -481,6 +711,28 @@ footer hr{
   justify-content: center;
  
 }
+.register_select{
+}
+.register_select>select{
+  height: 55px;
+  border: none;
+  border-radius: 5px;
+  border: 1px solid #dbdbdb;
+  width: 100%;
+}
+.adjust_signin{
+  width: 100%;
+  padding: 10px;
+  font-size: 20px;
+
+}
+.edu_form>input{
+  border-radius: 5px;
+  height: 55px;
+  width: 100%;
+  padding-left: 10px;
+  border: 1px solid #dbdbdb;
+  }
 .welcome{
   font-family: 'Zilla Slab Highlight', cursive; 
   font-size: 40px;
@@ -493,9 +745,84 @@ footer hr{
   margin-top: 15px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  border: 2px solid black;
+  justify-content: flex-start;
+  border: 2px solid #dbdbdb;
+  border-radius: 7px;
   padding: 30px 60px 30px 40px;
+  box-shadow: 0 0 4px 4px #e8e8e8;
+}
+.edu_shadow{
+  box-shadow: 0 0 4px 4px #adadad;
+  border-radius: 5px;
+
+}
+.flex_or{
+  display: flex;
+  color:#060b26;
+  font-weight: bold;
+  margin-top: 20px;
+}
+.reduce_line{
+  width: 45%;
+  position: relative;
+  top: 10px;
+}
+.field_margin{
+  margin-bottom: 20px;
+}
+.edu_form_header{
+  text-align: center;
+  font-size: 19px;
+  font-family: 'Dela Gothic One', cursive;
+  padding-bottom: 20px;
+}
+.forgotten_password{
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+  margin-top: 20px;
+  color:#060b26;
+
+}
+.upload_container{
+  position: relative;
+  border: 3px solid #060b26;
+  background-color: white;
+  color:#060b26;
+  opacity: 1;
+  display: flex;
+  border-radius: 5px;
+  width: 80%;
+  color: #060606;
+  margin-top: 20px;
+  padding: 5px;
+}
+.side_side{
+  display: flex;
+}
+.check_position{
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  
+}
+input[type="file"]{
+  position: absolute;
+  width: 100%;
+  opacity: 0;
+}
+.bx-camera{
+  font-size: 30px;
+}
+.preview_container{
+  
+}
+.preview_active{
+  color:#4BB543;
+  font-size: 30px;
+}
+.previews_hidden{
+  display: none;
 }
 
 /* }
@@ -571,6 +898,23 @@ width: 50px;
   height: 50px;
 }
 /* message design*/
+.chat_body{
+  width: 100%;
+}
+.edu_chat_time_flex{
+ position: relative;
+ height: 12px;
+}
+.edu_chat_time{
+  font-size: 10px;
+  font-weight: bold;
+  display: inline-block;
+  position: absolute;
+  
+}
+.edu_chat_time_sender{
+  right: 0px;
+}
 .edu_message_header{
   display: flex;
   flex-direction: row;
@@ -621,27 +965,26 @@ width: 50px;
   width: 150px;
   color: black;
 }
- 
-  
-  @media all and (max-width: 767px) {
-      
-  }
 
   /* profile page */
 .profile_container{
   display: flex;
   flex-direction: column;
+  background-color: #f5f5f5;
+  font-weight: bold;
+}
+.entire_container{
   width: 90%;
   margin: auto;
   padding-top: 20px;
   padding-bottom: 20px;
-  background-color: white;
+  background-color: #f5f5f5;
+  font-weight: bold;
 }
+
 .image_rating_container{
   flex: 1;
   padding-left: 20px;
- 
-
 }
 .rating_container{
 }
@@ -650,41 +993,220 @@ width: 50px;
 
 }
 .image_container{
-  height: 150px;
+  
  
 }
 .about_container{
-  flex: 2;
+  flex: 5;
+ 
+  padding-right: 40px;
   padding-left: 20px;
 }
-.about_padding_top{
-  padding-top: 20px;
-}
+
 .title_2{
 font-size: 16px;
-color: #c83737;
+color: #060b26;
 }
+.font_25{
+  font-size: 18px;
+  font-weight: bold;
+  }
 .title_1{
   font-size: 25px;
-  color: #c83737;
+  color: #060b26;
+  font-family: 'Dela Gothic One', cursive;
+}
+.title_3{
+  font-size: 17px;
+  color: #060b26;
   font-family: 'Dela Gothic One', cursive;
 }
 
 .image_container .profile_dp{
   width: 200px;
-  height: 100%;
+  height: 200px;
+  border: solid 1px gray;
+  box-shadow: 0 0 4px 4px #adadad;
+
+}
+.top_talents{
+  font-size: 20px;
+  padding: 25px;
+  font-weight: bold;
+  font-family: 'New Tegomin', serif;
+
+}
+.review_container{
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: #f5f5f5;
+  font-weight: bold;
+}
+.reviewContainer{
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  border: 1px solid #dbdbdb;
+  width: 96%;
+  margin:auto;
+  padding-bottom: 20px;
+  margin-bottom: 5px;
+}
+.edu_profile_review{
+  padding-left: 25px;
+}
+.edu_review_content{
+  padding-left: 15px;
+}
+.reviewer{
+  padding-left: 20px;
+  
+}
+.no_reviews{
+  font-family: 'New Tegomin', serif;
+  text-align: center;
+  padding: 40px;
+  font-size: 20px;
+}
+.reviewer>.text{
+  font-family: 'New Tegomin', serif;
+  font-size: 18px;
 }
 
 
-@media only screen and (min-width: 500px) {
-  .profile_container{
-    flex-direction: row;
+/* reveiw */
+.edu_review>textarea{
+  height: 100px;
+  width: 100%;
+  padding-left: 10px;
+  border: 1px solid #dbdbdb;
+  border-radius: 5px;
   }
+  .ratingSize{
+    font-size: 30px;
+    font-weight: bold;
+  }
+
+  /*cart */
+  .cart_container{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+  margin: auto;
+  padding-bottom: 20px;
+  background-color: #fbfbfb;
+  font-weight: bold;
+  border-radius: 10px;
+  padding-left: 20px;
+ }
+.items_container{
+  display: flex;
+  flex-direction: column;
+}
+  .cart_info{
+    display: flex;
+    flex-direction: row;
+    padding-top: 20px;
+
+  
+  }
+  .cart_info>img{
+    height: 100px;
+    width: 100px;
+  }
+  .cart_information{
+    padding-left: 30px;
+  }
+  .cart_qty_cost>input{
+    text-align: center;
+    width: 50px;
+    border-radius: 5px;
+    border: none;
+    border: 1px solid #dbdbdb;
+    font-family: sans-serif;
+
+
+  }
+  .total_cost_tab{
+    background-color: #060b26;
+    color: white;
+    padding: 20px;
+    }
+    .total_cost_tab p{
+      font-family: 'Teko', sans-serif;
+
+    }
+  .summary_spacing{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .summary_spacing p{
+    font-size: 20px;
+
+  }
+  .checkout_summary{
+    font-size: 30px;
+  }
+  .total_item_charge{
+    font-family: 'Teko', sans-serif;
+
+  }
+
+.cart_qty_cost{
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-family: 'Teko', sans-serif;
+
+
+}
+.edu_checkout{
+  width: 100%;
+  padding: 6px;
+  background-color: goldenrod ;
+  border: none;
+  font-weight: bold;
+}
+
+/* fast pages */
+.checkEmail_welcome{
+  background-color: #060b26;
+  color: white;
+  padding: 8px;
+  border-radius: 5px;
+  width: 200px;
+  margin: auto;
+  text-align: center;
+  margin-top: 30px;
+
+
+}
+
+
+
+@media only screen and (min-width: 500px) {
   .image_container .profile_dp{
-    width: 200px;
+    width: 300px;
+    height: 300px;
+  }
+
+  .chat_body{
+    width: 70%;
+  }
+  .edu_search_input{
+    font-size: 12px;
+    margin-bottom: 25px ;
+  }
+  .search_option2{
+    display: none;
+  }
+  .search_option1{
+    display: inline-block;
   }
   .image_container{
-    height: 250px;
   }
   .rating_container{
     padding-top: 20px;
@@ -697,6 +1219,7 @@ color: #c83737;
 
 
 
+
 /*media query screen */
 
 @media only screen and (min-width: 350px) {
@@ -705,6 +1228,42 @@ color: #c83737;
 
 
 @media only screen and (min-width: 600px) {
+  .cart_container{
+    display: flex;
+    flex-direction: row;
+  }
+
+  .chat_body{
+    width: 50%;
+  }
+  .items_container{
+    display: flex;
+    flex-grow: 1;
+    flex-direction: row;
+  }
+  .loop_container{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+  .cart_info{
+    flex-grow: 2;
+  }
+  .cart_qty_cost{
+    flex-grow: 2;
+  }
+  .total_cost_tab{
+    flex-grow: 1;
+  }
+  .services_button a{
+    padding: 15px;
+    width: 200px;
+  }
+  
+  .edu_cards{
+    grid-template-areas: 'item1 item2 item3';
+    grid-column-gap: 30px;
+  }
 
   .tutors_grid{
       grid-template-columns: 50% 50%;
@@ -715,7 +1274,7 @@ color: #c83737;
     
   }
   .sign_form{
-    width: 50%
+    width: 55%
   }
   /* .key_details{
       display: flex;
@@ -783,6 +1342,24 @@ color: #c83737;
 }
 
 @media only screen and (max-width: 600px) {
+  .edu_verify_button>span{
+    display: none;
+  
+  }
+  .lang_select{
+    font-family: 'New Tegomin', serif;
+    font-weight: bold;
+    
+    color: white;
+    border-radius: 5px;
+    margin-right: 5px;
+    padding-left: 8px;
+    background-color: #060b30;
+    height: 30px;
+    font-size: 15px;
+
+  
+  }
   .edu_icon{
       width: 120px;
       height: 30px;
@@ -806,6 +1383,18 @@ color: #c83737;
 
 /*---------------950 PX-------------*/
 @media only screen and (min-width: 850px) {
+  .profile_container{
+    display: flex;
+    flex-direction: row;
+  }
+  .chat_body{
+    width: 40%;
+  }
+  .edu_card{
+    font-size: 40px;
+    width: 300px;
+    padding: 30px;
+  }
   .sign_in_up{
       position: absolute;
       right: 140px;
@@ -826,6 +1415,9 @@ color: #c83737;
   .services{
       flex-direction: row;
   }
+  .chat_body{
+    width: 35s%;
+  }
   .learning_image{
       height: 200px;
       width: 500px;
@@ -838,6 +1430,16 @@ color: #c83737;
 
 
 @media only screen and (min-width: 1200px) {
+.profile_container{
+}
+.entire_container{
+  width: 70%;
+}
+.review_container{
+}
+  .sign_form{
+    width: 35%;
+  }
  
   .tutors_grid{
       grid-template-columns: 25% 25% 25% 25% ;
@@ -850,6 +1452,9 @@ color: #c83737;
 
 
 /* profile edit page*/
+.upload_change_width{
+  width: 150px;
+}
 .center{
   left: 30%;
 }
@@ -880,7 +1485,7 @@ color: #c83737;
   margin-top: 20px;
 }
 label{
-  color: #c83737;
+  color: #060b26;
   font-weight: bold;
   display: block;
   margin-bottom: 5px;
@@ -900,4 +1505,6 @@ textarea.field_param{
   height: 120px;
 }
 
-
+.flex_edit_profile{
+  flex: 3;
+}

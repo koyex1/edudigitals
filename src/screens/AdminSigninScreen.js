@@ -1,24 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { makeStyles } from '@material-ui/core/styles';
-import TextField from '@material-ui/core/TextField';
 import { signin } from '../actions/userActions';
-import MessageBox from '../components/MessageBox';
 import { Link } from 'react-router-dom';
+import {message,  Alert, } from 'antd';
 
 
 
-const useStyles = makeStyles((theme) => ({
-    root: {
-        '& > *': {
-            margin: theme.spacing(1),
-            width: '30ch',
-        },
-    },
-}));
+
 
 function AdminSigninScreen(props) {
-    const classes = useStyles();
     //for receiving
     //dispatch and select
     const dispatch = useDispatch()
@@ -32,7 +22,7 @@ function AdminSigninScreen(props) {
 
     
 
-    const submitHandler = (e)=>{
+    const onFinish = (e)=>{
         e.preventDefault();
         dispatch(signin(email, password))
     }
@@ -45,26 +35,47 @@ function AdminSigninScreen(props) {
 
     return (
         <div className="sign_container">
-            <div className="welcome">
-                Hi, We are glad you're here
-            </div>
-            <div className="sign_form">
-                <div className="errorMessage"></div>
-                <MessageBox></MessageBox>
-                
-                <form className={classes.root} noValidate autoComplete="off">
-              
-                    <TextField onChange={(e)=>{setEmail(e.target.value)}} id="standard-basic" label="Email" />
-                    <TextField onChange={(e)=>{setPassword(e.target.value)}} id="standard-password-input" label="Password" type="password" autoComplete="current-password" />
-                    
-                    <div className="button_container">
-                    <button onClick={submitHandler} className="submit">Submit</button>  
-                    <div><Link to="/register"> Not Registered?</Link></div>
-                    </div>                    
 
-                </form>
-            </div>
+      <div className="sign_form">
+      <div className="edu_form_header">Admin/Support Login</div>
+
+        {error && <div><Alert
+          message={error}
+          type="error"
+           />
+          <div className="edu_message_separator"> </div></div>}
+         
+         
+          <div >
+            <div className="edu_form field_margin">
+        <input onChange={e=>{setEmail(e.target.value)}} placeholder="Email" type="text" />
         </div>
+        <div className="edu_form">
+        <input onChange={e=>{setPassword(e.target.value)}} placeholder="Password" type="password" />
+        </div>
+        
+        
+        <button onClick={onFinish} className="message_button change_color adjust_signin">Sign In</button>
+
+        <div className="flex_or">
+          <hr className="reduce_line"/>
+          <div>OR</div> 
+          <hr className="reduce_line"/>
+        </div>
+
+        <Link to="/forgottenpassword"><div className="forgotten_password"> Forgotten Password</div> </Link>
+        <div className="flex_or">
+          <hr className="reduce_line"/>
+          <div>OR</div> 
+          <hr className="reduce_line"/>
+        </div>
+        <Link to="/forgottenpassword"><div className="forgotten_password"> Register</div> </Link>
+
+          </div>
+
+
+      </div>
+    </div>
     )
 }
 
