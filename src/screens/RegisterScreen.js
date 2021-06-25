@@ -29,7 +29,7 @@ function RegisterScreen(props) {
   const recallInfo = useSelector(state => state.recallInfo);
 
   
-  const { userInfo, error } = userRegister;
+  const { success, error } = userRegister;
  // const [picture , setPicture] = useState()
   const [identification , setIdentification] = useState()
   const [user, setUser] = useState({
@@ -154,9 +154,7 @@ if(imageValidator(preview2)){
     
     Axios.post('https://httpbin.org/anything', myData).then(res=>console.log(res));
     dispatch(register(myData));
-    if(error){
-      message.info(error)
-    }
+    
   }
 
   const uploadProfilePicture = (e) => {
@@ -197,6 +195,9 @@ dispatch(hideNavBar(true))
     }
   }, [])
 
+  console.log('sccess')
+  console.log(success)
+
   useEffect(() => {
     dispatch(rememberInfo({user, confirmPassword, language, subject, identification}))
     
@@ -208,9 +209,14 @@ console.log(recallInfo)
 
   useEffect(() => {
   
-    if (userInfo && userInfo._id) {
-      props.history.push('/checkEmail')    }
-  }, [userInfo, props.history])
+    if(error){
+      message.info(error)
+    }
+    if (success) {
+     message.info(success)
+     setTimeout( props.history.push('/checkEmail') , 3000)
+       }
+  }, [error, success, props.history])
 
 
 
@@ -304,10 +310,10 @@ console.log(recallInfo)
         <option value=''>Select a Language {i+1}</option>
          {languages.map((language)=>(<option value={language}>{language}</option>) )}
         </select>
-        <div onClick={handleRemoveLanguage(i)} className={language.length>1?"removeMore":"previews_hidden"}>- Remove language</div>
+        <div onClick={handleRemoveLanguage(i)} className={language.length>1?"removeMore":"previews_hidden"}> <i class='bx bxs-minus-circle'></i> Remove language</div>
         </Fragment>
         )}
-        <div onClick={handleAddLanguage} className="addMore">+ Add language</div>
+        <div onClick={handleAddLanguage} className="addMore"> <i class='bx bxs-plus-circle'></i>Add language</div>
         
         {/* countries*/}
         <select value={user && user.country} className="edu_form field_margin" onChange={e => setUser({ ...user, country: e.target.value })}>
@@ -326,14 +332,14 @@ console.log(recallInfo)
         {/*select subjects*/}
         {subject && subject.map((x,i)=>
         <Fragment key={i}>
-        <div className="edu_form field_margin">
+        <div className="edu_form ">
         <input value={x} onChange={handleChangeSubject(i)} placeholder={"Input subject  "+(i+1)}/>
 
-        <div onClick={handleRemoveSubject(i)} className={subject.length>1?"removeMore":"previews_hidden"}>- Remove Subject</div>
+        <div onClick={handleRemoveSubject(i)} className={subject.length>1?"removeMore":"previews_hidden"}> <i class='bx bxs-minus-circle'></i> Remove Subject</div>
         </div>
         </Fragment>
         )}
-        <div onClick={handleAddSubject} className="addMore">+ Add a Subject</div>
+        <div onClick={handleAddSubject} className="addMore"> <i class='bx bxs-plus-circle'></i> Add a Subject</div>
         
 
 

@@ -7,28 +7,20 @@ function TestScreen() {
 
  
   useEffect(() => {
-    console.log('effec')
-    console.log(window)
-  var be= document.createElement("div")
-  be.value= 'llllllllll'
-    
+
 
   }, [])
 
-  console.log('no inside')
-   console.log(window)
-   console.log(document)
+  
    
 
 
    const handleClick = (e) =>{
-     console.log(e)
-     console.log(inputRef)
-   
+    console.log()
    }
 
    const handleOnChange = (e) =>{
-    console.log(e)
+    console.log(e.target.value.toLowerCase())
   }
 
 

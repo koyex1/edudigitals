@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { addToBookmark, tutorDetails } from '../actions/userActions';
+import { addToBookmark, loginMessage, tutorDetails } from '../actions/userActions';
 import {
     Form, Input, message, Button, Select, InputNumber, Switch, Radio,
     Slider, Upload, Rate, Checkbox, Row, Col, Alert, Pagination,
 } from 'antd';
 import { firstToUpper } from '../data/data';
-import img from '../images/dp.jpg';
+import img from '../images/none.png'
 import { getReviews } from '../actions/reviewActions';
 import { cartList } from '../actions/cartActions';
 
@@ -46,10 +46,17 @@ function ProfileScreen(props) {
 
 
     const handleBookmark = () => {
+        
+  
+    if(!userInfo){
+     dispatch(loginMessage('You must be logged in first to bookmark a tutor for later'))
+      props.history.push('/signin')
+    }else{
         addToBookmark(id, userInfo._id).then(data => {
           
             message.success( data.message)
         })
+         }
     }
 
     const openMessage = () => {
@@ -79,31 +86,30 @@ function ProfileScreen(props) {
                 <div className="profile_container ">
                     <div className="image_rating_container">
                         <div className="image_container">
-                            <img className="profile_dp" src={`data:${tutorInfo && tutorInfo.profilePicture.contentType};base64,${tutorInfo && Buffer.from(tutorInfo.profilePicture.data.data).toString('base64')}`} />
+                            <img className="profile_dp" src={!tutorInfo? img:`data:${tutorInfo && tutorInfo.profilePicture.contentType};base64,${tutorInfo && Buffer.from(tutorInfo.profilePicture.data.data).toString('base64')}`} />
                         </div>
                         <div className="rating_container">
                             <p className="title_1 profile_name_space">{tutorInfo && firstToUpper(tutorInfo.firstName)} {tutorInfo && firstToUpper(tutorInfo.lastName)}</p>
-                            <p className="title_2">Rating: {tutorInfo && tutorInfo.rating}</p>
-                            <p className="title_2">Completed Lessons: {tutorInfo && tutorInfo.tutorials} </p>
-                            <p className="title_2">Charge: ${tutorInfo && tutorInfo.charge} per hour</p>
-                            <p className="title_2">Language: {tutorInfo && tutorInfo.language.split(',').map(
+                            <div className="title_2 edu_flex"><p>Charge: {tutorInfo && tutorInfo.charge} $/hr <i class='bx bxs-dollar-circle'></i> </p> <p className="title_2 " style={{marginLeft: '20px'}}>Country: {tutorInfo && tutorInfo.country}  <i class='bx bxs-flag-alt'></i></p> </div>
+                            <p className="title_2">Rating: {tutorInfo && tutorInfo.rating} <i className='bx bxs-star' ></i></p>
+                            <p className="title_2">Completed Lessons: {tutorInfo && tutorInfo.tutorials}  <i class='bx bxs-book-open'> </i>  </p>
+                            <div className="edu_flex"><p>Languages:</p><div  className="language">{tutorInfo && tutorInfo.language.split(',').map(
                                 x => (
                                     <div className="span_block">{x}</div>
                                 )
                             )
 
-                            }</p>
-                            <p className="title_2">Subjects: {tutorInfo && tutorInfo.subjects.split(',').map(
+                            }</div></div>
+                            <div className="edu_flex"><p >Subjects: </p><div className="subjects">{tutorInfo && tutorInfo.subjects.split(',').map(
                                 x => (
                                     <div className="span_block">{x}</div>
                                 )
                             )
 
-                            }</p>
-                            <p className="title_2">Country: {tutorInfo && tutorInfo.country}</p>
+                            }</div></div>
                             <button onClick={openMessage} class="message_button change_color"><i class='bx bx-message-detail'></i> Message</button>
                             <button onClick={handleBookmark} class="message_button change_color" ><i class='bx bx-bookmark-plus'></i> Bookmark</button>
-                            <div class="profile_cart_container"><button style={{ fontSize: '13px' }} onClick={addToCart} class=" change_color profile_cart_button" ><i style={{ fontSize: '18px' }} class=' bx bx-cart-alt'></i> Add to cart</button><input onChange={e => setQty(e.target.value)} min={1} defaultValue={1} type="number" /><div className="nawa"> {qty<2?<p className="hours_position"> HR</p>:<p className="hours_position"> HRS</p>}</div></div>
+                            <div class="profile_cart_container"><button style={{ fontSize: '13px' }} onClick={addToCart} class=" change_color profile_cart_button" ><i style={{ fontSize: '18px' }} class=' bx bx-cart-alt'></i> Add to cart</button><input onChange={e => setQty(e.target.value)} min={1} defaultValue={1} type="number" /> <div className="nawa"> {qty<2?<p className="hours_position"> HR</p>:<p className="hours_position"> HRS</p>}</div></div>
                         </div>
                     </div>
                     <div className="about_container">

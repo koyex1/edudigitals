@@ -141,10 +141,10 @@ function SearchScreen(props) {
         </div>
 
       </div>
-        {
+        {/*
         !search && !language && rating.toString()==[0,5].toString() && charge.toString()==[0,70].toString() && !country &&
         <div className="top_talents">TOP TALENTS</div>
-        }   
+        */ }   
           
       {
       !searchInfo?
@@ -162,24 +162,23 @@ function SearchScreen(props) {
         <div className="profile_info">
           <img className="search_display_pic"  src={`data:${search.profilePicture.contentType};base64,${Buffer.from(search.profilePicture.data.data).toString('base64')}`}/>
           <div className="space key_details">
-            <p>Charge: {search.charge} $/hr</p>
-            <p>Completed Lessons: {search.tutorials} </p>
-            <p>Rating: {search.rating} <i className='bx bxs-star' ></i></p>
-            <p>Languages: {search.language.split(',').map(
+          <div className="edu_flex" ><p><strong>Charge:</strong> {search.charge} $/hr <i class='bx bxs-dollar-circle'></i></p> <p style={{marginLeft: '20px'}}>Country: {search.country} <i class='bx bxs-flag-alt'></i></p></div>
+          <div className="edu_flex" > <p>Rating: {search.rating} <i className='bx bxs-star' ></i></p> <p style={{marginLeft: '20px'}}>Completed Lessons: {search.tutorials} <i class='bx bxs-book-open'> </i> </p></div>
+            <div className="edu_flex"><p>Languages:</p><div className="language">{search.language.split(',').map(
               x=>(
                   <div className="span_block">{x}</div>
               )
             )
             
-            }</p>
-            <p>Subjects: {search.subjects.split(',').map(
+            }</div></div>
+           <div className="edu_flex subjects"><p>Subjects:</p><div className="subjects"> {search.subjects.split(',').map(
               x=>(
                   <div className="span_block">{x}</div>
               )
             )
             
-            }</p>
-            <p>Country: {search.country}</p>
+            }</div></div>
+            
           </div>
         </div>
         <p className="edu_search_about">{search.about}</p>

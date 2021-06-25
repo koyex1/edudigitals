@@ -46,7 +46,7 @@ function ChatScreen(props) {
 
   if(!userInfo){
    dispatch(loginMessage('You must be logged in first to access this page'))
-    console.log(props.history.push('/signin'))
+    props.history.push('/signin')
   }
 
 useEffect(() => {

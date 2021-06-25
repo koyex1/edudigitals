@@ -20,6 +20,10 @@ function SigninScreen(props) {
   const dispatch = useDispatch()
   const userSignin = useSelector(state => state.userSignin)
   const { userInfo, error } = userSignin;
+  const parameters = props.location.search.substring(1)
+  const cart = parameters
+
+
 
   //for sending out
   const [email, setEmail] = useState('');
@@ -31,6 +35,7 @@ function SigninScreen(props) {
 
   const onFinish = () => {
     dispatch(signin(email, password))
+   
   
   }
 
@@ -38,8 +43,13 @@ function SigninScreen(props) {
     
     if (userInfo && userInfo._id) {
       socket.emit('login', (userInfo._id));
+      if(cart=='cart'){
+        props.history.push('/cart')
+      }
+      else{
         props.history.push('/');
     }
+  }
   }, [userSignin, userInfo, props])
 
   return (
@@ -59,7 +69,7 @@ function SigninScreen(props) {
          
           <div >
             <div className="edu_form field_margin">
-        <input onChange={e=>{setEmail(e.target.value)}} placeholder="Email" type="text" />
+        <input onChange={e=>{setEmail(e.target.value)}} placeholder="Email" type="email" />
         </div>
         <div className="edu_form">
         <input onChange={e=>{setPassword(e.target.value)}} placeholder="Password" type="password" />

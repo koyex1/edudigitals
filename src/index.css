@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Teko:wght@300;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
 /*font-family: 'Dela Gothic One', cursive;*/
 /*font-family: 'New Tegomin', serif;*/
 
@@ -21,6 +22,11 @@ body{
 .website_color{
   background-color: #060b26;
   color:white;
+}
+
+.edu_flex{
+  display: flex;
+  flex-direction: row;
 }
 
 .lang_select{
@@ -167,18 +173,21 @@ button{
   display: flex;
   font-weight: bold;
 }
+.dropdown_box {
+  position: relative;
+
+}
 
 .dropdown_content{
   flex-direction: column;
-  display: flex;
   z-index: 2;
   position: absolute;
-  top: 45px;
-  right: 3%;
-  top: 10%;
+  left: -100px;
+  width: 150px;
   background-color: white;
   display: none;
   color: black;
+  text-align: center;
   font-weight: bold;
   font-size: 10px;
 }
@@ -248,7 +257,8 @@ display:flex;
 .search_option2{
 }
 .bx-search{
-  font-size: 25px;
+  font-size: 29px;
+
 }
 .span_block{
   background-color: darkgray;
@@ -272,7 +282,7 @@ display:flex;
   padding-left: 30px;
   height: 50px;
   width: 100%;
-  font-size: 10px;
+  font-size: 14px;
 }
 
 .edu_search_input>input{
@@ -287,9 +297,9 @@ display:flex;
 .edu_search_input>button{
   height: 99%;
   position: relative;
-  top: 2px;
+  top: 4px;
   right: 3px;
-  width: 30%;
+  width: 20%;
   color: white;
   background-color: #060b26;
   border-top-right-radius: 5px;
@@ -297,13 +307,19 @@ display:flex;
   font-size: 20px;
   font-family: 'New Tegomin', serif;
 }
+.search_box{
+  width: 99%;
+  padding-top: 20px;
+}
 
 .search_select{
   width: 100%;
   padding-bottom: 30px;
   height: 100px;
   border: none;
+  font-size: 11px;
 }
+
 .search_select>select{
   width: 40%;
   height: 40px;
@@ -317,13 +333,9 @@ display:flex;
   margin-top: 0px;
 }
 
-.search_box{
-  width: 60%;
-  padding-top: 20px;
-  
-}
+
 .edu_slider{
-  width: 70%;
+  width: 95%;
 }
 .slider_position{
   display: flex;
@@ -385,8 +397,8 @@ height: 110%;
 }
 .profile_info{
   display: flex;
+  flex-direction: column;
   justify-content: flex-start;
-  align-items: center;
   margin-top: 10px;
 
 }
@@ -407,6 +419,12 @@ height: 110%;
 .key_details{
   display: flex;
   flex-direction: column;
+}
+.edu_flex .language{
+  margin-left: 5px;
+}
+.edu_flex .subjects{
+  margin-left: 20px;
 }
 .bxs-star{
   color: goldenrod
@@ -433,8 +451,12 @@ background-color: #f0f0f0;
 
 /*-------------main body -----------*/
 .home_main_container{
-  width: 80%;
+  width: 90%;
   margin: auto;
+  padding-left: 10px;
+  padding-right: 10px;
+
+  background-color: lightcoral;
 }
 /* radomn image container
 .random_image{
@@ -453,6 +475,12 @@ object-fit: fill;
 }
 .services_body{
   font-size: 20px;
+  background-color: #060b26;
+  color: white;
+  padding: 20px;
+ 
+
+  
 }
 .services_button{
   display: flex;
@@ -479,19 +507,28 @@ color: black;
   color: white;
 }
 .services_header{
+  margin-top: 5px;
   font-size: 90px;
+  line-height: normal;
   color: black;
   font-weight: bold;
+  padding-left: 20px;
   font-family: 'Zilla Slab Highlight', cursive; 
 }
-.services, .services_body, .services_button{
+.services, .services_button{
   margin-top: 20px;
 }
 .services_row1{
   margin-bottom: 20px;
 }
 .learning_image{
+  width: 90%;
+  align-self: center;
   
+}
+.learning_image>img{
+  margin-top: 15px;
+
 }
 .learning_image img{
   width: 100%;
@@ -532,22 +569,24 @@ font-family: 'Zilla Slab Highlight', cursive;
   
   justify-content: center;
   padding-bottom: 40px;
+  align-self: center;
 }
 .edu_card{
   margin-top: 40px;
   background-color: #060b26;
-  width: 230px;
+  width: 240px;
   padding: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  border-radius: 8px;
+ 
   color: white;
   
 }
 .edu_card_content{
   font-size: 20px;
+  font-family: 'Permanent Marker', cursive;
 }
 .edu_card_image{
 }
@@ -584,7 +623,7 @@ width: 80px;
 }
 
 .profile_cart_button{
-  width: 40%;
+  width: 115px;
   padding: 3px;
   border-radius: 5px;
   font-family: 'New Tegomin', serif;
@@ -599,9 +638,9 @@ width: 80px;
   position: relative;
 }
 .nawa{
-  background-color: green;
   position: relative;
   height: 100%;
+  padding-left: 8px;
 
 }
 
@@ -614,7 +653,7 @@ width: 80px;
 }
 
 .profile_cart_container>input{
-  width: 20%;
+  width: 60px;
   height: 40px;
   margin-left: 20px;
   border: none;
@@ -669,11 +708,19 @@ footer{
   margin-top: 20px;
 
 
+
 }
+.footer_section>p{
+  font-family: 'Permanent Marker', cursive;
+  font-size: 18px ;
+}
+
 .footer_section{
   padding-top: 20px;
   padding-bottom: 20px;
   font-size: 40px;
+
+
 }
 .link_color, .link_color:hover, .link_color:visited, .link_color:active{
   color: #060b26
@@ -694,6 +741,7 @@ footer hr{
   padding-bottom: 15px;
   display: inline-block;
   font-weight: bold;
+  
 
 }
 .removeMore{
@@ -772,15 +820,17 @@ footer hr{
 }
 .edu_form_header{
   text-align: center;
-  font-size: 19px;
-  font-family: 'Dela Gothic One', cursive;
-  padding-bottom: 20px;
+  font-size: 25px;
+  font-weight: bold;
+  font-family: 'New Tegomin', serif;
+    padding-bottom: 20px;
 }
 .forgotten_password{
   text-align: center;
   font-weight: bold;
   font-size: 20px;
   margin-top: 20px;
+  font-family: 'New Tegomin', serif;
   color:#060b26;
 
 }
@@ -1091,17 +1141,20 @@ color: #060b26;
   }
 
   /*cart */
+  
   .cart_container{
     display: flex;
     flex-direction: column;
     width: 90%;
   margin: auto;
-  padding-bottom: 20px;
   background-color: #fbfbfb;
   font-weight: bold;
   border-radius: 10px;
-  padding-left: 20px;
  }
+ .loop_container{
+   padding-bottom: 20px;
+   padding-left: 20px;
+   }
 .items_container{
   display: flex;
   flex-direction: column;
@@ -1120,10 +1173,12 @@ color: #060b26;
   .cart_information{
     padding-left: 30px;
   }
-  .cart_qty_cost>input{
+  .cart_qty_cost input{
     text-align: center;
-    width: 50px;
+    width: 30px;
+    top: -2px;
     border-radius: 5px;
+    position: relative;
     border: none;
     border: 1px solid #dbdbdb;
     font-family: sans-serif;
@@ -1134,7 +1189,11 @@ color: #060b26;
     background-color: #060b26;
     color: white;
     padding: 20px;
-    }
+    height: 360px;
+    display: flex;
+flex-direction: column;
+  }
+
     .total_cost_tab p{
       font-family: 'Teko', sans-serif;
 
@@ -1153,41 +1212,81 @@ color: #060b26;
   }
   .total_item_charge{
     font-family: 'Teko', sans-serif;
-
+    
+  }
+  .remove_move{
+  color: black;
+  padding: 0px 6px 4px 6px;
+  background-color: white;
+  margin-top: 10px;
+  border-radius: 5px;
+  font-weight: bolder;
+  border: 3px solid #060b26;
+  font-family: 'New Tegomin', serif;
   }
 
 .cart_qty_cost{
-  padding-top: 20px;
-  padding-bottom: 20px;
+  display: inline-block;
   font-family: 'Teko', sans-serif;
+  font-size: 15px;
+  padding-top: 20px;
+  position: relative;
+  left: 130px;
+  width: 150px;
 
-
+}
+.cart_qty_cost div{
+  font-family: 'Teko', sans-serif;
+  
+}
+.refresh_cart{
+  padding: 0 6px 0 6px;
+  background-color: white;
+  border-radius: 5px;
+  font-weight: bolder;
+  border: 3px solid #060b26;
+  font-family: 'New Tegomin', serif;
+  margin-left: 6px;
 }
 .edu_checkout{
   width: 100%;
   padding: 6px;
   background-color: goldenrod ;
   border: none;
+  font-size: 20px;
   font-weight: bold;
+  font-family: 'Teko', sans-serif;
+  border-radius: 5px;
+
 }
 
 /* fast pages */
 .checkEmail_welcome{
   background-color: #060b26;
   color: white;
-  padding: 8px;
-  border-radius: 5px;
-  width: 200px;
-  margin: auto;
-  text-align: center;
-  margin-top: 30px;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
 
-
+.checkEmail_welcome_text{
+color: white;
 }
 
 
 
 @media only screen and (min-width: 500px) {
+   
+   .edu_search_input>button{
+     width: 15%;
+     top: 3px;
+    
+   }
+   
+
   .image_container .profile_dp{
     width: 300px;
     height: 300px;
@@ -1222,20 +1321,43 @@ color: #060b26;
 
 /*media query screen */
 
-@media only screen and (min-width: 350px) {
+@media only screen and (min-width: 400px) {
+
+  .search_select{
+font-size: 14px;  
+  }
+ .edu_search_input>button{
+   width: 15%;
+  
+ }
+ .edu_slider{
+  width: 85%;
+}
+
 
 }
 
 
 @media only screen and (min-width: 600px) {
-  .cart_container{
-    display: flex;
-    flex-direction: row;
-  }
+  .cart_qty_cost{
+    left: 0;
+       position: initial;
+      
+     }
 
   .chat_body{
     width: 50%;
   }
+  .cart_information{
+    width: 250px;
+  }
+
+   .edu_search_input>button{
+     width: 20%;
+     top: 3px;
+    
+   }
+  
   .items_container{
     display: flex;
     flex-grow: 1;
@@ -1246,7 +1368,7 @@ color: #060b26;
     flex-direction: column;
     flex-grow: 1;
   }
-  .cart_info{
+  .cart_info{ 
     flex-grow: 2;
   }
   .cart_qty_cost{
@@ -1296,6 +1418,7 @@ color: #060b26;
 /*---------------850 PX- for navbar------------*/
 
 @media only screen and (max-width: 850px) {
+  
   .nav_bar{
       position: relative;
   }
@@ -1346,6 +1469,9 @@ color: #060b26;
     display: none;
   
   }
+  
+
+
   .lang_select{
     font-family: 'New Tegomin', serif;
     font-weight: bold;
@@ -1381,18 +1507,58 @@ color: #060b26;
 
 }
 
+@media only screen and (min-width: 700px) {
+.profile_info{
+  align-items: center;
+  flex-direction: row;
+ }
+  }
 /*---------------950 PX-------------*/
 @media only screen and (min-width: 850px) {
+  .cart_qty_cost{
+ left: 0;
+    position: initial;
+   
+  }
+
+  .cart_container{
+    display: flex;
+    flex-direction: row;
+  }
+  .edu_search_input>input{
+    width: 70%;
+   }
+   .edu_slider{
+    width: 400px;
+  }
+  .cart_information{
+    width: 250px;
+  }
+   .edu_search_input>button{
+     height: 99%;
+     top: 3px;
+   
+     width: 100px;
+    
+   }
+   .search_box{
+     width: 500px
+   }
+
   .profile_container{
     display: flex;
     flex-direction: row;
+  }
+  .search_select{
+    width: 500px;
+  
   }
   .chat_body{
     width: 40%;
   }
   .edu_card{
     font-size: 40px;
-    width: 300px;
+    width: 350px;
     padding: 30px;
   }
   .sign_in_up{
@@ -1412,25 +1578,43 @@ color: #060b26;
       grid-template-columns: 33% 33% 33% ;
       
   }
-  .services{
-      flex-direction: row;
-  }
+ 
+.services_row1{
+}
+.services_body{
+  font-size: 30px;
+  width: 100%;
+}
+
+.services_header{
+  font-size: 120px;
+
+}
   .chat_body{
-    width: 35s%;
+    width: 35%;
   }
-  .learning_image{
-      height: 200px;
-      width: 500px;
-      flex-grow: 0;
-      flex-shrink: 0;
-      
-  }
+
 }
 
 
 
 @media only screen and (min-width: 1200px) {
+  .cart_information{
+    width: 450px;
+  }
 .profile_container{
+}
+.learning_image{
+  display: flex;
+  flex-direction: row;
+  align-self: center;
+}
+.learning_image>img{
+  width: 48%;
+  height: 340px;
+  margin-right: 20px;
+
+
 }
 .entire_container{
   width: 70%;

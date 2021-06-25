@@ -205,18 +205,20 @@ console.log('message number ' + messageNo)
         <Badge  count={cartInfo.length} offset={[-12, -1]}>
         <Link to='/cart' ><i class='users_logo bx bx-cart-alt'></i> </Link>
         </Badge>
+        {userInfo && userInfo._id &&
         <div className="dropdown_box">
         <Link><i className='users_logo bx bx-user-circle' ></i></Link>
 
         <div className="dropdown_content">
-        {userInfo && userInfo._id &&
-        (<Link className="edu_link_account" to={`/profileedit/${userInfo.firstName}-${userInfo.lastName}`}> 
+        
+        <Link className="edu_link_account" to={`/profileedit/${userInfo.firstName}-${userInfo.lastName}`}> 
         <i class='bx bx-info-square' ></i> Edit Profile 
-        </Link>)}
+        </Link>
         <Link className="edu_link_account" onClick={signoutHandler} ><i className='bx bx-log-out' ></i>Logout</Link>
         </div>
 
         </div>
+      }
 
     </div>
     <div className="edu_user_name">

@@ -277,10 +277,10 @@ function ProfileEditScreen() {
                                 <option value=''>Select a Language {i + 1}</option>
                                 {languages.map((language) => (<option value={language}>{language}</option>))}
                             </select>
-                            <div onClick={handleRemoveLanguage(i)} className={language.length > 1 ? "removeMore" : "previews_hidden"}>- Remove language</div>
+                            <div onClick={handleRemoveLanguage(i)} className={language.length > 1 ? "removeMore" : "previews_hidden"}>  <i class='bx bxs-minus-circle'></i> Remove language</div>
                         </Fragment>
                     )}
-                    <div onClick={handleAddLanguage} className="addMore">+ Add language</div>
+                    <div onClick={handleAddLanguage} className="addMore"> <i class='bx bxs-plus-circle'></i> Add language</div>
 
 
                     <label>Country</label>
@@ -296,10 +296,10 @@ function ProfileEditScreen() {
                         <Fragment key={i}>
                             <input value={x} onChange={handleChangeSubject(i)}
                         type="text" placeholder={"Input subject  "+(i+1) }/>
-                            <div onClick={handleRemoveSubject(i)} className={subject.length > 1 ? "removeMore" : "previews_hidden"}>- Remove Subject</div>
+                            <div onClick={handleRemoveSubject(i)} className={subject.length > 1 ? "removeMore" : "previews_hidden"}> <i class='bx bxs-minus-circle'></i> Remove Subject</div>
                         </Fragment>
                     )}
-                    <div onClick={handleAddSubject} className="addMore">+ Add Subject</div>
+                    <div onClick={handleAddSubject} className="addMore"> <i class='bx bxs-plus-circle'></i> Add Subject</div>
 
 
                     <label>charge</label>

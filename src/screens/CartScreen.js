@@ -124,6 +124,14 @@ function CartScreen(props) {
         setCheckOut(false)
     }
    
+    const handleCheckout = ()=>{
+        if(!userInfo){
+            props.history.push('/signin?cart')
+        }
+        else{
+        setCheckOut(true);
+        }
+    }
     
    
     return (
@@ -141,41 +149,46 @@ function CartScreen(props) {
 
                 <div className = "cart_information">
                 <strong><p className="title_3 ">{firstToUpper(x.firstName) + '  ' + firstToUpper(x.lastName)}</p></strong>
-                <p>Charge: ${x.charge}</p>
-                <p>Languages: {x.language.split(',').map(
+                <p>Charge: {x.charge} $/hr</p>
+                <div className="edu_flex"><p>Languages:</p><div  className="language">{x.language.split(',').map(
               x=>(
                   <div className="span_block">{x}</div>
               )
             )
             
-            }</p>
-                <p>Subjects: {x.subjects.split(',').map(
+            }</div></div>
+                <div className="edu_flex"><p>Subjects:</p><div  className="subjects"> {x.subjects.split(',').map(
               x=>(
                   <div className="span_block">{x}</div>
               )
             )
             
-            }</p>
+            }</div></div>
 
-                <button style={{fontSize:'15px'}} onClick={handleRemove(x)} class="message_button change_color" ><i style={{fontSize:'15px'}} class=' bx bx-trash-alt'></i>Remove</button>
                 
                 </div>
                 </div>
 
+                <div className='total_item_charge cart_qty_cost'>
+                Total Charge: <div style={{display:'inline-block'}}>${x.qty* x.charge} </div>
+                </div>
+                
                 <div className='cart_qty_cost'>
-                Total Hours: 
-                <input key={x._id} onChange={handleInput(x._id)} defaultValue={x.qty} type="number"/> 
-                <button key={x._id} style={{fontSize:'15px'}} onClick={handleRefresh(x)} class="message_button change_color" ><i style={{fontSize:'20px'}} class='bx bx-refresh'></i></button>
+                Total Hours:
+                <div style={{display:'inline-block'}}>
+                <input key={x._id} style={{height:'25px'}} onChange={handleInput(x._id)} defaultValue={x.qty} type="number"/> 
+                <button key={x._id}  onClick={handleRefresh(x)} class="refresh_cart" ><i style={{fontSize:'15px'}} class='bx bx-refresh'></i></button>
+                <button className="refresh_cart" style={{fontSize:'15px'}} onClick={handleRemove(x)}  ><i style={{fontSize:'15px'}} class=' bx bx-trash-alt'></i></button>
+                </div>
                 </div>
 
-                <div className='total_item_charge cart_qty_cost'>
-                Total Charge: ${x.qty* x.charge}
-                </div>
+               
                 </div>
                 ))}
 
 </div>
                 <div className='total_cost_tab'>
+                    <div>
                 <p className="checkout_summary">Summary</p>
                     <div className="summary_spacing">
                     <p>subTotal</p>
@@ -192,13 +205,11 @@ function CartScreen(props) {
                     <p>Total</p>                    
                     <p>${total}</p>
                     </div>
+                    </div>
                     <div>
                     {checkOut?
                     <div ref={paypal}></div>
-                    :<button className="edu_checkout" style={{color: 'black'}} onClick={()=>{
-                        setCheckOut(true);
-                        
-                    }}>Checkout
+                    :<button className="edu_checkout" style={{color: 'black'}} onClick={handleCheckout}>Checkout
                         
                     </button>
                     }
