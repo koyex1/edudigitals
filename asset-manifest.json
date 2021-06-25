@@ -1,26 +1,27 @@
 {
   "files": {
-    "main.css": "/edudigitals/static/css/main.64c5b198.chunk.css",
-    "main.js": "/edudigitals/static/js/main.f908f7f3.chunk.js",
-    "main.js.map": "/edudigitals/static/js/main.f908f7f3.chunk.js.map",
-    "runtime-main.js": "/edudigitals/static/js/runtime-main.9dbf6d9f.js",
-    "runtime-main.js.map": "/edudigitals/static/js/runtime-main.9dbf6d9f.js.map",
+    "main.css": "/edudigitals/static/css/main.a3ad2d25.chunk.css",
+    "main.js": "/edudigitals/static/js/main.944602e5.chunk.js",
+    "main.js.map": "/edudigitals/static/js/main.944602e5.chunk.js.map",
+    "runtime-main.js": "/edudigitals/static/js/runtime-main.c4ef7d1e.js",
+    "runtime-main.js.map": "/edudigitals/static/js/runtime-main.c4ef7d1e.js.map",
     "static/css/2.d08f1efe.chunk.css": "/edudigitals/static/css/2.d08f1efe.chunk.css",
-    "static/js/2.45faa80a.chunk.js": "/edudigitals/static/js/2.45faa80a.chunk.js",
-    "static/js/2.45faa80a.chunk.js.map": "/edudigitals/static/js/2.45faa80a.chunk.js.map",
-    "static/js/3.7f6ec468.chunk.js": "/edudigitals/static/js/3.7f6ec468.chunk.js",
-    "static/js/3.7f6ec468.chunk.js.map": "/edudigitals/static/js/3.7f6ec468.chunk.js.map",
+    "static/js/2.301f48da.chunk.js": "/edudigitals/static/js/2.301f48da.chunk.js",
+    "static/js/2.301f48da.chunk.js.map": "/edudigitals/static/js/2.301f48da.chunk.js.map",
+    "static/js/3.3ba30616.chunk.js": "/edudigitals/static/js/3.3ba30616.chunk.js",
+    "static/js/3.3ba30616.chunk.js.map": "/edudigitals/static/js/3.3ba30616.chunk.js.map",
     "index.html": "/edudigitals/index.html",
     "static/css/2.d08f1efe.chunk.css.map": "/edudigitals/static/css/2.d08f1efe.chunk.css.map",
-    "static/css/main.64c5b198.chunk.css.map": "/edudigitals/static/css/main.64c5b198.chunk.css.map",
-    "static/js/2.45faa80a.chunk.js.LICENSE.txt": "/edudigitals/static/js/2.45faa80a.chunk.js.LICENSE.txt",
-    "static/media/learning.5aac27b3.jpg": "/edudigitals/static/media/learning.5aac27b3.jpg"
+    "static/css/main.a3ad2d25.chunk.css.map": "/edudigitals/static/css/main.a3ad2d25.chunk.css.map",
+    "static/js/2.301f48da.chunk.js.LICENSE.txt": "/edudigitals/static/js/2.301f48da.chunk.js.LICENSE.txt",
+    "static/media/learning.5aac27b3.jpg": "/edudigitals/static/media/learning.5aac27b3.jpg",
+    "static/media/learning2.631020af.jpg": "/edudigitals/static/media/learning2.631020af.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.9dbf6d9f.js",
+    "static/js/runtime-main.c4ef7d1e.js",
     "static/css/2.d08f1efe.chunk.css",
-    "static/js/2.45faa80a.chunk.js",
-    "static/css/main.64c5b198.chunk.css",
-    "static/js/main.f908f7f3.chunk.js"
+    "static/js/2.301f48da.chunk.js",
+    "static/css/main.a3ad2d25.chunk.css",
+    "static/js/main.944602e5.chunk.js"
   ]
 }
