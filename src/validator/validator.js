@@ -37,7 +37,7 @@ export const imageValidator = (input) =>{
 
 export const alphabetValidator = (input) =>{
     for(let i= 0 ; i<input.length; i++){
-    let condition =( (input.charCodeAt(i)>=65 && input.charCodeAt(i)<=90) || (input.charCodeAt(i)>=97 && input.charCodeAt(i)<=122))
+    let condition =( (input.charCodeAt(i)>=65 && input.charCodeAt(i)<=90) || (input.charCodeAt(i)>=97 && input.charCodeAt(i)<=122)|| input.charCodeAt(i)==32)
     if(!condition){
         return true
     }
