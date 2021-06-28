@@ -18,6 +18,7 @@ import { languages, countryList, roles } from '../data/data';
 import { alphabetValidator, emailValidator, emptyValidator, imageValidator, passwordConfirmValidator } from '../validator/validator';
 import { Fragment } from 'react';
 import CropImage from '../components/cropImage/CropImage';
+import { resizeFile } from '../Config/resizeFile';
 const { Option } = Select;
 
 
@@ -150,27 +151,32 @@ if(imageValidator(preview2)){
     myData.append('language', language)
     myData.append('subject', subject)
 
-    console.log(user)
+
     
-    Axios.post('https://httpbin.org/anything', myData).then(res=>console.log(res));
+    Axios.post('https://httpbin.org/anything', myData).then(/*res=>console.log(res)*/);
     dispatch(register(myData));
     
   }
 
-  const uploadProfilePicture = (e) => {
-    if (e.target.files && e.target.files.length > 0) {
-			const reader = new FileReader();
-			reader.readAsDataURL(e.target.files[0]);
-			reader.addEventListener("load", () => {
-        dispatch(ImageCrop(reader.result))
-			});
+  const uploadProfilePicture = async(e) => {
+    if (e.target.files && e.target.files.length > 0) {      
+			const view = await resizeFile(e.target.files[0])
+      dispatch(ImageCrop(view))
+
+
+      // const reader = new FileReader();
+			// reader.readAsDataURL(e.target.files[0]);
+			// reader.addEventListener("load", () => {
+        
+      //   dispatch(ImageCrop(reader.result))
+
+			// });
 		}
 dispatch(hideNavBar(true))
   };
 
   const uploadIdCard = (e) => {
     if (e.target.files && e.target.files.length > 0) {
-      console.log(e.target.files[0])
       setIdentification(e.target.files[0])
         setPreview2(true)
 		}
@@ -195,16 +201,14 @@ dispatch(hideNavBar(true))
     }
   }, [])
 
-  console.log('sccess')
-  console.log(success)
+  
 
   useEffect(() => {
     dispatch(rememberInfo({user, confirmPassword, language, subject, identification}))
     
   }, [confirmPassword, dispatch, identification, language, subject, user])
 
-console.log('recallInfo')
-console.log(recallInfo)
+
   //-------USE EFFECT
 
   useEffect(() => {
@@ -262,14 +266,8 @@ const handleChangeSubject = (i)=>(e)=> {
 
 const triggerFileSelectPopup = () => {
   inputRef.current.click();
-  console.log(inputRef.current)
 }
-console.log('language')
-console.log(language)
-console.log('subject')
-console.log(subject)
-console.log('recallInfo')
-console.log(recallInfo)
+
 
   return (
     <>

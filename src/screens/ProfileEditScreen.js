@@ -9,6 +9,7 @@ import { countryList, languages, roles } from '../data/data';
 import axios from 'axios';
 import { Fragment } from 'react';
 import CropImage from '../components/cropImage/CropImage';
+import { resizeFile } from '../Config/resizeFile';
 
 
 function ProfileEditScreen() {
@@ -132,13 +133,18 @@ function ProfileEditScreen() {
 
 
 
-    const uploadProfilePicture = (e) => {
+    const uploadProfilePicture = async(e) => {
         if (e.target.files && e.target.files.length > 0) {
-			const reader = new FileReader();
-			reader.readAsDataURL(e.target.files[0]);
-			reader.addEventListener("load", () => {
-        dispatch(ImageCrop(reader.result))
-			});
+
+            const view = await resizeFile(e.target.files[0])
+            dispatch(ImageCrop(view))
+
+		// 	const reader = new FileReader();
+		// 	reader.readAsDataURL(e.target.files[0]);
+		// 	reader.addEventListener("load", () => {
+        //         console.log(reader.result)
+        // dispatch(ImageCrop(reader.result))
+		// 	});
 		}
         dispatch(hideNavBar(true))
 

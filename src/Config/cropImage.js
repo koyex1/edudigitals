@@ -71,7 +71,8 @@ export const generateDownload = async (imageSrc, crop) => {
  const canvas = await getCroppedImg(imageSrc, crop);
  const dataBuffer= canvas.toDataURL()
  const data = dataURLtoFile(dataBuffer)
- console.log(data)
+console.log('differen sizes')
+console.log(data)
 
  return data;
 };

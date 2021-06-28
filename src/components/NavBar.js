@@ -54,9 +54,7 @@ function NavBar(props) {
   }
 
 
-console.log('message number ' + messageNo)
-  console.log('you dey here? abeg dey o')
-  console.log('cart info length' + cartInfo.length)
+  console.log('start')
 
   // useEffect(() => {
   //   setCart(localStorage.getItem('edudigital_cart')?JSON.parse(localStorage.getItem('edudigital_cart')).length: 0)
