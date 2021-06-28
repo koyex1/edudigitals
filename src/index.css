@@ -392,8 +392,8 @@ height: 110%;
 /* search profile */
 
 .search_display_pic{
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
 }
 .profile_info{
   display: flex;
@@ -1124,6 +1124,10 @@ color: #060b26;
 .reviewer>.text{
   font-family: 'New Tegomin', serif;
   font-size: 18px;
+}
+.rating_style{
+  font-family: 'Teko', sans-serif;
+
 }
 
 

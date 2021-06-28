@@ -9,9 +9,11 @@ function ForgottenPasswordScreen() {
 
     const [email, setEmail] = useState()
 
-  const onFinish = () =>{
-    sendEmail(email)
-    message.info('An email has been sent successfully')
+  const onFinish = async() =>{
+     let text = await sendEmail(email)
+     message.info(text.message)
+
+    
   }
 
 

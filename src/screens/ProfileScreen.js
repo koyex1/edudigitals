@@ -107,9 +107,14 @@ function ProfileScreen(props) {
                             )
 
                             }</div></div>
+                            
+                            {tutorInfo && <div>
                             <button onClick={openMessage} class="message_button change_color"><i class='bx bx-message-detail'></i> Message</button>
                             <button onClick={handleBookmark} class="message_button change_color" ><i class='bx bx-bookmark-plus'></i> Bookmark</button>
                             <div class="profile_cart_container"><button style={{ fontSize: '13px' }} onClick={addToCart} class=" change_color profile_cart_button" ><i style={{ fontSize: '18px' }} class=' bx bx-cart-alt'></i> Add to cart</button><input onChange={e => setQty(e.target.value)} min={1} defaultValue={1} type="number" /> <div className="nawa"> {qty<2?<p className="hours_position"> HR</p>:<p className="hours_position"> HRS</p>}</div></div>
+                            </div>
+                            }
+                            
                         </div>
                     </div>
                     <div className="about_container">
@@ -129,7 +134,7 @@ function ProfileScreen(props) {
                             {reviews && reviews.review && reviews.review.map(x => (
                                 <div className="reviewContainer">
 
-                                    <div style={{ fontSize: "25px", }}><Rate disabled defaultValue={x.rating} />{x.rating}<span style={{ fontSize: "15px" }} >/ 5</span></div>
+                                    <div className='rating_style' style={{ fontSize: "20px", }}><Rate disabled defaultValue={x.rating} />  {"  " + x.rating}<span style={{ fontSize: "12px" }} >/ 5</span></div>
                                     <div className="reviewer">
                                         <div className="text">{x.student.firstName + ' ' + x.student.lastName}</div>
                                         <div>{x.createdAt}</div>
