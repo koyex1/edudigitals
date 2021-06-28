@@ -321,7 +321,7 @@ const triggerFileSelectPopup = () => {
         </div>
 
         <div className="edu_form field_margin">
-        <input defaultValue={user && user.charge} onChange={e => setUser({ ...user, charge: e.target.value })} min='1' placeholder="Charge" type="number" />
+        <input defaultValue={user && user.charge} onChange={e => setUser({ ...user, charge: e.target.value })} min='1' placeholder="Chargen$/hour" type="number" />
         </div>
         <div className="edu_form field_margin">
         <input defaultValue={user && user.phoneNo} onChange={e => setUser({ ...user, phoneNo: e.target.value })} placeholder="Phone Number" type="text" />
