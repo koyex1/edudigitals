@@ -603,7 +603,7 @@ color: black;
   border-radius: 50%;
 }
 .path{
-  padding-left: 20px;
+  padding-left: 35px;
 }
 .divButton, .message_button{
   color: black;
@@ -693,6 +693,7 @@ font-family: 'Zilla Slab Highlight', cursive;
 }
 
 .edu_cards{
+  
   font-weight: bold;
   display: grid;
   grid-template-areas: 'item1'
@@ -703,6 +704,7 @@ font-family: 'Zilla Slab Highlight', cursive;
   padding-bottom: 40px;
   align-self: center;
   position: relative;
+  z-index: -1;
 
 }
 .edu_card{
