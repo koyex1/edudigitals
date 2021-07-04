@@ -1,16 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Teko:wght@300;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cabin:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Akaya+Kanadaka&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil+Display:wght@900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Concert+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 /*font-family: 'Dela Gothic One', cursive;*/
 /*font-family: 'New Tegomin', serif;*/
 
 html{
   box-sizing: border-box;
   font-size: 62.5%;
+  
 }
 *, body{
 
   font-size: 1.5rem;
-  font-family: 'Noto Sans HK', sans-serif;
+  font-family: 'Cabin', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   margin: 0;
@@ -53,40 +60,46 @@ body{
   padding-top: 20px;
   padding-bottom: 20px;
 }
+
 main{
   flex: 3;
+}
+header{
+  position: relative;
+  z-index: 1;
 }
 .bold_font{
   font-weight: bold;
 }
-.link_white{
-  color: white;
-}
-.link_black:visited, .link_black:hover, .link_black
- {
-  color: black;
-}
-.black_link:hover {
-  color: black;
-}
-a{
-  text-decoration: none;
-  cursor: pointer;
-  color: white;
-  
-}
-a:visited{
-  color: white;
-}
-a:hover{
-  color: black;
-}
-.black{
-  color: black;
-}
+
 button{
   cursor: pointer;
 }
+.pointer{
+  cursor: pointer;
+}
+.linkBlue{
+  color:#060b26;
+}
+.font_Cabin{
+  font-family: 'Cabin', sans-serif;
+  font-size: 20px;
+  font-weight: bolder;
+}
+.centralizeNavLink{
+  display: inline-block;
+  margin:auto;
+}
+.linkHoverFloral:hover{
+  color: #c83737;
+}
+.linkHoverFloralBack:hover .menu-span{
+  background-color: #c83737;
+}
+.pointerCursor{
+  cursor: context-menu;
+}
+
 
 
 /*colors*/
@@ -108,13 +121,13 @@ button{
 
 }
 .nav_bar {
-  background-color: #060b26;
   display: flex;
-  justify-content: space-between;
-  margin-top: 30px;
-
-  z-index: 1;
+  flex-direction: column;
+  background-color: #4BB543;
+   background-color: white;
+  padding-top: 20px;
 }
+
 .nav_first_row{
   display: flex;
 }
@@ -141,6 +154,12 @@ button{
  
   
 }
+.navBarFirst{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  z-index: 4;
+}
 .edu_account_box{
   display: flex;
   flex-direction: column;
@@ -149,19 +168,26 @@ button{
   color: white;
 }
 .users_nav{
-  color: white;
+  color: #060b26;
   display: flex;
   justify-content: flex-end;
   align-items: flex-start;
-  padding-top: 30px;
 }
 
-.bx-mail-send, .bx-user-circle{
+.bx-message, .bx-bell,  .bx-cart-alt,  .bx-user-circle{
   font-size: 35px;
+  color: #060b26;
+  position: relative;
+  top: 4px;
+  margin-left: 5px;
+
+
+
 }
 
 .bx-info-square, .bx-log-out{
   font-size: 18px;
+
 }
 .users_nav a{
   font-size: 15px;
@@ -169,9 +195,12 @@ button{
  
 }
 .edu_user_name{
-  padding-left: 20px;
+  margin-right: 20px;
   display: flex;
   font-weight: bold;
+  align-self: flex-end;
+  position: relative;
+  z-index: 0;
 }
 .dropdown_box {
   position: relative;
@@ -199,10 +228,7 @@ button{
   width: 100%;
 }
 
-.dropdown_box .edu_link_account:hover {
-  background-color: #060b26;
-  color: white;
-}
+
 
 .dropdown_content a{
   padding: 10px;
@@ -238,7 +264,13 @@ display:flex;
   visibility: hidden;
   
 }
-
+/*svgs */
+.shrinkTutor{
+  transform: scale(0.2);
+}
+.growTutor{
+  transform: scale(2);
+}
 /*greeting */
 .greeting{
   display: flex;
@@ -252,13 +284,25 @@ display:flex;
 /*search bar*/
 .search_option1{
   display: none;
-
 }
+
+
 .search_option2{
+  font-family: 'Akaya Kanadaka', cursive;
+
 }
 .bx-search{
   font-size: 29px;
+  position: relative;
+  top: 4px;
 
+
+}
+.search_results{
+  color: black
+}
+.search_results:hover{
+background-color:#f0f0f0;
 }
 .span_block{
   background-color: darkgray;
@@ -282,7 +326,13 @@ display:flex;
   padding-left: 30px;
   height: 50px;
   width: 100%;
+  font-family: 'Akaya Kanadaka', cursive;
   font-size: 14px;
+}
+
+.side_side p{
+  font-family: 'Akaya Kanadaka', cursive;
+  font-size: 18px;
 }
 
 .edu_search_input>input{
@@ -290,22 +340,26 @@ display:flex;
  padding-left: 10px;
  height: inherit;
  border: none;
- border: 1px solid #dbdbdb
+ border-top-left-radius: 20px;
+ border-bottom-left-radius: 20px;
+ border: 1px solid #dbdbdb;
+ outline: none;
  
 }
 
 .edu_search_input>button{
-  height: 99%;
-  position: relative;
-  top: 4px;
+  height: 100%;
+  top: 6px;
   right: 3px;
   width: 20%;
-  color: white;
+  color: #ffffff;
   background-color: #060b26;
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
   font-size: 20px;
   font-family: 'New Tegomin', serif;
+  position: relative;
+ 
 }
 .search_box{
   width: 99%;
@@ -318,6 +372,8 @@ display:flex;
   height: 100px;
   border: none;
   font-size: 11px;
+  font-family: 'Akaya Kanadaka', cursive;
+
 }
 
 .search_select>select{
@@ -336,6 +392,8 @@ display:flex;
 
 .edu_slider{
   width: 95%;
+  font-family: 'Akaya Kanadaka', cursive;  
+
 }
 .slider_position{
   display: flex;
@@ -433,8 +491,8 @@ height: 110%;
   margin-top: 7px;
   padding: 0px 30px 0px 30px;
 }
+
 .search_results:hover{
-background-color: #f0f0f0;
 }
 .edu_search_about{
   margin-top: 10px;
@@ -451,12 +509,10 @@ background-color: #f0f0f0;
 
 /*-------------main body -----------*/
 .home_main_container{
-  width: 90%;
+  width: 100%;
   margin: auto;
   padding-left: 10px;
   padding-right: 10px;
-
-  background-color: lightcoral;
 }
 /* radomn image container
 .random_image{
@@ -473,61 +529,129 @@ object-fit: fill;
   display: flex;
   flex-direction: column;
 }
+.svgbehind{
+  position: absolute;
+  top:150px;
+  left: 20%;
+
+
+}
 .services_body{
   font-size: 20px;
   background-color: #060b26;
   color: white;
-  padding: 20px;
- 
-
-  
+  padding: 25px;
+  font-family: 'Akaya Kanadaka', cursive;  
+  margin: 20px;
+  border-radius: 3px;
 }
 .services_button{
   display: flex;
   justify-content: flex-start;
+ 
+
 }
-.services_button a{
+.divButton{
+background-color:violet;
+}
+.slideReveal2{
+  top: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0;
+  z-index: 0;
+}
+.slideWriting2{
+  font-size: 20px;
+  color: white;
+  opacity: 1;
+  align-self: flex-end;
+  font-family: 'Akaya Kanadaka', cursive;
+  z-index: 20;
+  padding: 10px;
+
+position: relative;
+  margin-left: 10px;
+
+}
+
+.slideWriting2>p{
+  font-size: 15px;
+}
+.divButton{
 color: black;
 }
-.services_button a, .message_button{
+.services_engine{
+  padding-left: 10px;
+  padding-bottom: 20px;
+  background-color: #c83737;
+  margin-left: 20px;
+  margin-right: 20px;
+  border-radius: 2px;
+  padding-top: 10px;
+}
+.movingBall{
+  background-color: #ffffff;
+  position: relative;
+  z-index: 3;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+.path{
+  padding-left: 20px;
+}
+.divButton, .message_button{
   color: black;
   margin-right: 20px;
   padding: 1px 15px 4px 15px;
   background-color: white;
   border-radius: 5px;
-  margin-top: 20px;
   font-weight: bolder;
   border: 3px solid #060b26;
   font-family: 'New Tegomin', serif;
+  font-size: 11px;
   
 }
+.message_button{
+  margin-top: 20px;
+}
 
-.services_button a:nth-child(even), .change_color{
+.change_color{
   background-color: #060b26;
   color: white;
 }
+
 .services_header{
   margin-top: 5px;
   font-size: 90px;
   line-height: normal;
   color: black;
-  font-weight: bold;
-  padding-left: 20px;
-  font-family: 'Zilla Slab Highlight', cursive; 
+  font-family: 'Concert One', cursive;
+        padding-left: 20px;
+  position: relative;
+  z-index: 2;
 }
-.services, .services_button{
+
+.services{
   margin-top: 20px;
 }
 .services_row1{
   margin-bottom: 20px;
+  position: relative;
+  z-index: 0;
 }
 .learning_image{
   width: 90%;
   align-self: center;
   
 }
-.learning_image>img{
+.learning_image>div{
   margin-top: 15px;
+  position: relative;
+  margin-left: 20px;
 
 }
 .learning_image img{
@@ -570,12 +694,16 @@ font-family: 'Zilla Slab Highlight', cursive;
   justify-content: center;
   padding-bottom: 40px;
   align-self: center;
+  position: relative;
+
 }
 .edu_card{
+  border-radius: 4px;
   margin-top: 40px;
   background-color: #060b26;
-  width: 240px;
-  padding: 10px;
+  width: 200px;
+  padding-top: 30px;
+  padding-bottom: 30px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -586,7 +714,7 @@ font-family: 'Zilla Slab Highlight', cursive;
 }
 .edu_card_content{
   font-size: 20px;
-  font-family: 'Permanent Marker', cursive;
+  font-family: 'Akaya Kanadaka', cursive;
 }
 .edu_card_image{
 }
@@ -711,22 +839,22 @@ footer{
 
 }
 .footer_section>p{
-  font-family: 'Permanent Marker', cursive;
-  font-size: 18px ;
+  font-family: 'Akaya Kanadaka', cursive;
+  font-size: 14px ;
+}
+.footer_margin_left>div{
+  display: inline-block;
+  margin-left: 10px;
 }
 
 .footer_section{
-  padding-top: 20px;
-  padding-bottom: 20px;
+
   font-size: 40px;
-
-
 }
-.link_color, .link_color:hover, .link_color:visited, .link_color:active{
-  color: #060b26
-}
+
 .footer_section i{
-  font-size: 25px;
+  font-size: 30px;
+ color: #060b30;
 }
 footer hr{
   width: 90%;
@@ -797,7 +925,7 @@ footer hr{
   border: 2px solid #dbdbdb;
   border-radius: 7px;
   padding: 30px 60px 30px 40px;
-  box-shadow: 0 0 4px 4px #e8e8e8;
+  box-shadow: 0 0 4px 4px #8a8989;
 }
 .edu_shadow{
   box-shadow: 0 0 4px 4px #adadad;
@@ -849,11 +977,12 @@ footer hr{
 }
 .side_side{
   display: flex;
+ 
 }
+
 .check_position{
   position: relative;
-  display: flex;
-  align-items: flex-end;
+  top: 2px;
   
 }
 input[type="file"]{
@@ -1126,7 +1255,7 @@ color: #060b26;
   font-size: 18px;
 }
 .rating_style{
-  font-family: 'Teko', sans-serif;
+  font-family: 'Akaya Kanadaka', cursive;  
 
 }
 
@@ -1283,12 +1412,22 @@ color: white;
 
 
 @media only screen and (min-width: 500px) {
+
+  .slideWriting2{
+    font-size: 80px;
+   
+  
+  }
+  .slideWriting2>p{
+    font-size: 40px;
+  }
    
    .edu_search_input>button{
      width: 15%;
-     top: 3px;
+     top: 2px;
     
    }
+
    
 
   .image_container .profile_dp{
@@ -1308,6 +1447,10 @@ color: white;
   }
   .search_option1{
     display: inline-block;
+
+  }
+  .search_option1>div{
+    font-family: 'Akaya Kanadaka', cursive;
   }
   .image_container{
   }
@@ -1316,8 +1459,13 @@ color: white;
   }
   .rating_container>p{
     margin-bottom: 20px;
-  }
+  }   
+
+ 
+
 }
+
+ 
 
 
 
@@ -1326,7 +1474,9 @@ color: white;
 /*media query screen */
 
 @media only screen and (min-width: 400px) {
-
+.svgbehind{
+top: 100px
+}
   .search_select{
 font-size: 14px;  
   }
@@ -1337,17 +1487,53 @@ font-size: 14px;
  .edu_slider{
   width: 85%;
 }
+.slideWriting2{
+  font-size: 22px;
+ 
+
+}
+.slideWriting2>p{
+  font-size: 18px;
+}
 
 
 }
 
 
 @media only screen and (min-width: 600px) {
+  .svgbehind{
+    top: 200px;
+    left: 40%;
+    transform: scaleX(2)
+  }
   .cart_qty_cost{
     left: 0;
        position: initial;
       
      }
+     .path{
+      padding-left: 50px;
+       }
+
+     .slideWriting2{
+      font-size: 40px;
+      }
+    
+    
+    .slideWriting2>p{
+      font-size: 25px;
+    }
+  .edu_user_name{
+    margin-right: 35px;
+  }
+  .slideWriting2{
+    font-size: 25px;
+   
+  
+  }
+  .slideWriting2>p{
+    font-size: 20px;
+  }
 
   .chat_body{
     width: 50%;
@@ -1358,7 +1544,7 @@ font-size: 14px;
 
    .edu_search_input>button{
      width: 20%;
-     top: 3px;
+     top: 2px;
     
    }
   
@@ -1381,15 +1567,14 @@ font-size: 14px;
   .total_cost_tab{
     flex-grow: 1;
   }
-  .services_button a{
-    padding: 15px;
-    width: 200px;
+  .divButton{
+    padding: 2px;
+    padding-left: 9px;
+    width: 120px;
+    font-size: 15px;
   }
   
-  .edu_cards{
-    grid-template-areas: 'item1 item2 item3';
-    grid-column-gap: 30px;
-  }
+
 
   .tutors_grid{
       grid-template-columns: 50% 50%;
@@ -1423,9 +1608,6 @@ font-size: 14px;
 
 @media only screen and (max-width: 850px) {
   
-  .nav_bar{
-      position: relative;
-  }
   .sign_in_up{
       position: absolute;
       flex-direction: column;
@@ -1437,7 +1619,7 @@ font-size: 14px;
       transition: height 0.1s;
       height: 0px;
       visibility: hidden;
-      z-index:-1;
+      z-index:0;
   }
   .sign_in_up a{
       margin-left: 25px;
@@ -1452,7 +1634,7 @@ font-size: 14px;
   .displayMenu{
       visibility: visible;
       height: 110px;
-      z-index: 0;
+      z-index:  0;
       
   }
   i.bx-menu{
@@ -1516,7 +1698,16 @@ font-size: 14px;
   align-items: center;
   flex-direction: row;
  }
+ .edu_cards{
+  grid-template-areas: 'item1 item2 item3' ;
+ 
   }
+  .edu_card{
+    width: 250px;
+    margin-left: 20px;
+    height: 200px;
+  }
+   }
 /*---------------950 PX-------------*/
 @media only screen and (min-width: 850px) {
   .cart_qty_cost{
@@ -1531,6 +1722,7 @@ font-size: 14px;
   }
   .edu_search_input>input{
     width: 70%;
+
    }
    .edu_slider{
     width: 400px;
@@ -1540,7 +1732,7 @@ font-size: 14px;
   }
    .edu_search_input>button{
      height: 99%;
-     top: 3px;
+     top: 1px;
    
      width: 100px;
     
@@ -1560,6 +1752,7 @@ font-size: 14px;
   .chat_body{
     width: 40%;
   }
+
   .edu_card{
     font-size: 40px;
     width: 350px;
@@ -1587,7 +1780,6 @@ font-size: 14px;
 }
 .services_body{
   font-size: 30px;
-  width: 100%;
 }
 
 .services_header{
@@ -1611,10 +1803,16 @@ font-size: 14px;
 .learning_image{
   display: flex;
   flex-direction: row;
+  justify-content: center;
   align-self: center;
+  margin:auto;
 }
-.learning_image>img{
-  width: 48%;
+.learning_image>div{
+  width: 550px;
+  
+}
+.learning_image img{
+  width:100%;
   height: 340px;
   margin-right: 20px;
 
@@ -1632,6 +1830,9 @@ font-size: 14px;
   .tutors_grid{
       grid-template-columns: 25% 25% 25% 25% ;
       
+  }
+  .services_header{
+    width: 1400px;
   }
 
 }

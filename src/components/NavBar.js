@@ -1,6 +1,6 @@
 import React, { Fragment, useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import { signout } from '../actions/userActions';
 import { Alert, Menu ,  Badge} from 'antd';
 import {UnorderedListOutlined } from '@ant-design/icons';
@@ -10,7 +10,11 @@ import './Navbar.css';
 import { firstToUpper, pageLang } from '../data/data';
 import socket from '../Config/socketConfig'
 import { newMessage } from '../actions/chatActions';
+import { motion } from 'framer-motion';
+import { variants } from '../animation/variants';
+
  
+
 
 const { SubMenu } = Menu;
 
@@ -94,98 +98,105 @@ function NavBar(props) {
 
 
   const [sidebar, setSidebar] = useState(false);
-  const showSidebar = () => setSidebar(!sidebar);
+  const [moveBar, setMoveBar] = useState(false);
+
+  const showSidebar = () => {
+    setSidebar(!sidebar)
+    setMoveBar(!moveBar)
+
+  };
 
   return (
 
     <>
     <div className="nav_bar">
+    
+    <div className="navBarFirst">
     <div className="toggle_icon">
-    <IconContext.Provider value={{ color: '#fff' }}>
-        <div className='navbar'>
-          <div className='menu-bars'>
-          <i className='bx bx-menu'  onClick={showSidebar} ></i>
-          </div>
-        </div>
-        <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
-          <ul className='nav-menu-items' onClick={showSidebar}>
-            <li className='navbar-toggle'>
-              <div className='menu-bars'>
-              <i class='bx bx-x'></i>
-              </div>
-            </li>
-            <li  className="nav-text">
-                  <Link to="/">
-                  <i class='bx bx-home'></i>
-                    <span>Home</span>
-                  </Link>
-                </li>
 
-                <li  className="nav-text">
-                  <Link to="/search">
-                  <i class='bx bx-file-find' ></i>
-                    <span>Find a Tutor</span>
-                  </Link>
-                </li>
 
-                <li  className="nav-text">
-                  <Link to="/reverify">
-                  <i class='bx bx-question-mark'></i>
-                    <span>Reverify</span>
-                  </Link>
-                </li>
+        <motion.div  className='navbar  linkHoverFloralBack'>
+          <motion.div whileHover={{scale:1.5 }}
+          variants={variants.moveBarVariant}
+          animate={moveBar ? "move":"initial"}
+          className='menu-bars'  onClick={showSidebar} >
+          <motion.span className='menu-span' variants={variants.hamBurgerVariant}
+          animate={moveBar ? "anticlockwise":"initial"}></motion.span>
 
-                <li  className="nav-text">
-                  <Link to="/verifyuser">
-                  <i class='bx bx-show-alt'></i>
-                    <span>Verify Users</span>
-                  </Link>
-                </li>
+          <motion.span className='menu-span' variants={variants.hamBurgerVariant}
+          animate={moveBar ? "hidden":"initial"}></motion.span>
 
-                <li  className="nav-text">
-                  <Link to="/bookmarked">
-                  <i class='bx bxs-bookmark-plus' ></i>
-                    <span>Bookmarked for Later</span>
-                  </Link>
-                </li>
+          <motion.span className='menu-span' variants={variants.hamBurgerVariant}
+          initial="initial"
+          animate={moveBar ? "clockwise":"initial"}></motion.span>
+          </motion.div>
+        </motion.div>
 
-                <li  className="nav-text">
-                  <Link to="/ongoingsession/tutors">
-                  <i class='bx bx-time-five'></i>
-                    <span>Ongoing session(Student's Acct)</span>
-                  </Link>
-                </li>
 
-                <li  className="nav-text">
-                  <Link to="/ongoingsession/students">
-                  <i class='bx bx-time-five'></i>
-                    <span>Ongoing session(Tutor's Acct)</span>
+        <motion.nav  variants={variants.navMenuVariant} initial='initial' animate={moveBar ? "move" :"initial"} className={'nav-menu'}>
+          <motion.ul variants={variants.navMenuVariant} initial='initial' animate={moveBar ? "move" :"initial"}  className='nav-menu-items ' onClick={showSidebar}>
+            
+            <motion.li transition= {{duration: 1}} variants={variants.navLinkVariant} initial='initial' animate={moveBar ? "move" :"initial"} className="nav-text ">
+                  <Link className="Cursor" to="/">
+                 <motion.div variants={variants.linkColorVariant} whileHover={{scale:1.2, color:  ['#c83737', '#060b26'] }} transition= {{duration: 0.5 }} className="pointer linkBlue linkHoverFloral font_Cabin centralizeNavLink">Home</motion.div>
                   </Link>
-                </li>
+                </motion.li>
 
-                <li  className="nav-text">
-                  <Link to="/vetUsers">
-                  <i class='bx bx-time-five'></i>
-                    <span>Vet Payments</span>
+                <motion.li transition= {{duration: 1}} variants={variants.navLinkVariant} initial='initial' animate={moveBar ? "move" :"initial"} className="nav-text">
+                <Link className="pointerCursor" to="/search">
+                  <motion.div variants={variants.linkColorVariant} whileHover={{scale:1.2, color:  ['#c83737', '#060b26'] }} transition= {{duration: 0.5 }} className="pointer linkBlue linkHoverFloral font_Cabin centralizeNavLink"> Find a Tutor</motion.div>
                   </Link>
-                </li>
+                </motion.li>
 
-                <li  className="nav-text">
-                  <Link to="/signin">
-                  <i class='bx bx-log-in'></i>
-                    <span>Login</span>
+                <motion.li transition= {{duration: 1}} variants={variants.navLinkVariant} initial='initial' animate={moveBar ? "move" :"initial"} className="nav-text">
+                <Link className="pointerCursor" to="/reverify">
+                  <motion.div variants={variants.linkColorVariant} whileHover={{scale:1.2, color:  ['#c83737', '#060b26'] }} transition= {{duration: 0.6 }} className="pointer linkBlue linkHoverFloral font_Cabin centralizeNavLink"> Reverify</motion.div>
                   </Link>
-                </li>
+                </motion.li>
 
-                <li  className="nav-text">
-                  <Link to="/register">
-                  <i class='bx bx-door-open'></i>
-                    <span>Sign Up</span>
+                <motion.li transition= {{duration: 1}} variants={variants.navLinkVariant} initial='initial' animate={moveBar ? "move" :"initial"} className="nav-text">
+                <Link className="pointerCursor" to="/verifyuser">
+                  <motion.div variants={variants.linkColorVariant} whileHover={{scale:1.2, color:  ['#c83737', '#060b26'] }} transition= {{duration: 0.6 }} className="pointer linkBlue linkHoverFloral font_Cabin centralizeNavLink"> Verify Users</motion.div>
                   </Link>
-                </li>
-          </ul>
-        </nav>
-      </IconContext.Provider>
+                </motion.li>
+
+                <motion.li transition= {{duration: 1}} variants={variants.navLinkVariant} initial='initial' animate={moveBar ? "move" :"initial"}  className="nav-text">
+                <Link className="pointerCursor" to="/bookmarked">
+                  <motion.div variants={variants.linkColorVariant} whileHover={{scale:1.2, color:  ['#c83737', '#060b26'] }} transition= {{duration: 0.7}} className="pointer linkBlue linkHoverFloral font_Cabin centralizeNavLink">Bookmarked for Later</motion.div>
+                  </Link>
+                </motion.li>
+
+                <motion.li transition= {{duration: 1}} variants={variants.navLinkVariant} initial='initial' animate={moveBar ? "move" :"initial"}  className="nav-text">
+                <Link className="linkCursor"to="/ongoingsession/tutors">
+                <motion.div variants={variants.linkColorVariant} whileHover={{scale:1.2, color: ['#c83737', '#060b26'] }} transition= {{duration: 0.7 }} className="pointer linkBlue linkHoverFloral font_Cabin centralizeNavLink">Ongoing session(Student's Acct)</motion.div>
+                  </Link>
+                </motion.li>
+
+                <motion.li  transition= {{duration: 1.2 }} variants={variants.navLinkVariant} initial='initial' animate={moveBar ? "move" :"initial"} className="nav-text">
+                <Link className="pointerCursor"  to="/ongoingsession/students">
+                  <motion.div  variants={variants.linkColorVariant} whileHover={{scale:1.2, color:  ['#c83737', '#060b26']}} transition= {{duration:0.8 }} className="pointer linkBlue linkHoverFloral font_Cabin centralizeNavLink"> Ongoing session(Tutor's Acct) </motion.div>
+                  </Link>
+                </motion.li>
+
+                <motion.li transition= {{duration: 1.4}} variants={variants.navLinkVariant} initial='initial' animate={moveBar ? "move" :"initial"}  className="nav-text">
+                <Link className="pointerCursor" to="/vetUsers">
+                  <motion.div variants={variants.linkColorVariant} whileHover={{scale:1.2, color:  ['#c83737', '#060b26'] }} transition= {{duration: 0.8 }} className="pointer linkBlue linkHoverFloral font_Cabin centralizeNavLink">  Vet Payments</motion.div>
+                  </Link>
+                </motion.li>
+
+                <motion.li transition= {{duration: 1.6}} variants={variants.navLinkVariant} initial='initial' animate={moveBar ? "move" :"initial"} className="nav-text">
+                <Link className="pointerCursor" to="/signin">
+                  <motion.div variants={variants.linkColorVariant} whileHover={{scale:1.2, color:  ['#c83737', '#060b26'] }} transition= {{duration: 0.9}} className="pointer linkBlue linkHoverFloral font_Cabin centralizeNavLink">Login</motion.div>
+                  </Link>
+                </motion.li>
+
+                <motion.li  transition= {{duration: 1.8}} variants={variants.navLinkVariant} initial='initial' animate={moveBar ? "move" :"initial"} className="nav-text">
+                <Link className="pointerCursor" to="/register">
+                    <motion.div variants={variants.linkColorVariant} whileHover={{scale:1.2, color:  ['#c83737', '#060b26'] }} transition= {{duration: 0.9}} className="pointer linkBlue linkHoverFloral font_Cabin centralizeNavLink" >Sign Up</motion.div>
+                  </Link>
+                </motion.li>
+          </motion.ul>
+        </motion.nav>
     </div> 
    
 <div class="edu_account_box">
@@ -195,17 +206,17 @@ function NavBar(props) {
          {pageLang.map((lang)=>(<option value={Object.keys(lang)[0]}>{lang[Object.keys(lang)[0]]}</option>) )}
 </select>
     <Badge  count={notificationNo} offset={[-12, -1]}>
-    <Link to='/notification' ><i class='users_logo bx bxs-bell' ></i> </Link>
+    <Link  to='/notification' ><motion.i whileHover={{scale: 1.5}} class='linkHoverFloral users_logo bx bx-bell' ></motion.i> </Link>
     </Badge>
     <Badge  count={messageNo} offset={[-12, -1]}>
-        <Link to='/conversations' ><i className='users_logo bx bx-mail-send'></i></Link>
+        <Link to='/conversations' ><motion.i whileHover={{scale: 1.5}} class='linkHoverFloral bx bx-message'></motion.i></Link>
         </Badge>
         <Badge  count={cartInfo.length} offset={[-12, -1]}>
-        <Link to='/cart' ><i class='users_logo bx bx-cart-alt'></i> </Link>
+        <Link to='/cart' ><motion.i whileHover={{scale:1.5 }} class='linkHoverFloral users_logo bx bx-cart-alt'></motion.i> </Link>
         </Badge>
         {userInfo && userInfo._id &&
         <div className="dropdown_box">
-        <Link><i className='users_logo bx bx-user-circle' ></i></Link>
+        <Link><i className='linkHoverFloral users_logo bx bx-user-circle' ></i></Link>
 
         <div className="dropdown_content">
         
@@ -219,11 +230,14 @@ function NavBar(props) {
       }
 
     </div>
-    <div className="edu_user_name">
-    {userInfo && userInfo.firstName && (<p>Hi {firstToUpper(userInfo.firstName)}</p>) }
-    </div>
+   
 </div>
 
+</div>
+<div className="edu_user_name">
+    {userInfo && userInfo.firstName && (<motion.p  variants={variants.userNameVariant}
+    initial= "initial" animate="move">Hi {firstToUpper(userInfo.firstName)}</motion.p>) }
+    </div>
     </div>
 
     {userInfo && (userInfo.role =='pending' || userInfo.role =='user') && <div className="bold_font">

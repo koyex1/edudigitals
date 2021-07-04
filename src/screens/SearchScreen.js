@@ -8,6 +8,8 @@ import { Link } from 'react-router-dom';
 import { Form, Slider, Select, Pagination, Input, Spin, Space } from 'antd';
 import { languages, firstToUpper, countryList } from '../data/data';
 import img from '../images/dp.jpg'
+import { motion } from 'framer-motion';
+import { variants } from '../animation/variants';
 
 const { Option } = Select;
 const { Search } = Input;
@@ -83,11 +85,11 @@ function SearchScreen(props) {
         <input
         defaultValue={search}
         type="text"
-      placeholder="Find Tutor or Subject..."
+      placeholder="Enter Tutor or Subject..."
       onChange={e=>{setSearch(e.target.value)}}
     />
-    <button className="search_option1" onClick={handleSearch}>Search</button>
-    <button className="search_option2" onClick={handleSearch}><i class='bx bx-search'></i></button>
+    <button className="search_option1" onClick={handleSearch}><motion.div variants={variants.searchIconVariant}  initial="initial" animate="move">Search</motion.div></button>
+    <button className="search_option2" onClick={handleSearch}><motion.i variants={variants.searchIconVariant}  initial="initial" animate="move" class='bx bx-search'></motion.i></button>
 
     </div>
 
@@ -96,7 +98,7 @@ function SearchScreen(props) {
         <div className="search_other_options spacing_left">
 
         <div className="edu_slider">
-        <div className="side_side"><h4>Rating</h4><i class='check_position edu_icon_size bx bxs-star'></i></div>
+        <div className="side_side"><p>Rating</p><i class=' edu_icon_size bx bxs-star'></i></div>
         <Slider
         onChange={handleRating}
         max = {5}
@@ -110,7 +112,7 @@ function SearchScreen(props) {
         </div>
      
         <div className="edu_slider">
-        <div className="side_side"><h4>Charge</h4><i class='edu_icon_size bx bx-dollar-circle' ></i></div>
+        <div className="side_side"><p>Charge</p><i class='edu_icon_size bx bx-dollar-circle' ></i></div>
 
         <Slider
         onChange={handleCharge}
@@ -162,7 +164,7 @@ function SearchScreen(props) {
         <div className="profile_info">
           <img className="search_display_pic"  src={`data:${search.profilePicture.contentType};base64,${Buffer.from(search.profilePicture.data.data).toString('base64')}`}/>
           <div className="space key_details">
-          <div className="edu_flex" ><p><strong>Charge:</strong> {search.charge} $/hr <i class='bx bxs-dollar-circle'></i></p> <p style={{marginLeft: '20px'}}>Country: {search.country} <i class='bx bxs-flag-alt'></i></p></div>
+          <div className="edu_flex" ><p>Charge: {search.charge} $/hr <i class='bx bxs-dollar-circle'></i></p> <p style={{marginLeft: '20px'}}>Country: {search.country} <i class='bx bxs-flag-alt'></i></p></div>
           <div className="edu_flex" > <p>Rating: {search.rating} <i className='bx bxs-star' ></i></p> <p style={{marginLeft: '20px'}}>Completed Lessons: {search.tutorials} <i class='bx bxs-book-open'> </i> </p></div>
             <div className="edu_flex"><p>Languages:</p><div className="language">{search.language.split(',').map(
               x=>(
