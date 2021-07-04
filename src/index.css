@@ -126,6 +126,8 @@ button{
   background-color: #4BB543;
    background-color: white;
   padding-top: 20px;
+  padding-bottom: 20px;
+
 }
 
 .nav_first_row{
@@ -564,7 +566,7 @@ background-color:violet;
   z-index: 0;
 }
 .slideWriting2{
-  font-size: 20px;
+  font-size: 18px;
   color: white;
   opacity: 1;
   align-self: flex-end;
@@ -578,7 +580,7 @@ position: relative;
 }
 
 .slideWriting2>p{
-  font-size: 15px;
+  font-size: 14px;
 }
 .divButton{
 color: black;
@@ -613,6 +615,7 @@ color: black;
   border: 3px solid #060b26;
   font-family: 'New Tegomin', serif;
   font-size: 11px;
+  cursor: pointer;
   
 }
 .message_button{
@@ -646,11 +649,16 @@ color: black;
 .learning_image{
   width: 90%;
   align-self: center;
+  position: relative;
+  z-index: -1;
+
+
   
 }
 .learning_image>div{
   margin-top: 15px;
   position: relative;
+  z-index: 0;
   margin-left: 20px;
 
 }
@@ -1413,14 +1421,7 @@ color: white;
 
 @media only screen and (min-width: 500px) {
 
-  .slideWriting2{
-    font-size: 80px;
-   
-  
-  }
-  .slideWriting2>p{
-    font-size: 40px;
-  }
+
    
    .edu_search_input>button{
      width: 15%;

@@ -1,6 +1,6 @@
 export const variants= {
     moveBarVariant: {initial:{ x: 0},
-                        move:{x: '85vw', 
+                        move:{x: '100%', 
                         transition: {duration: 0.5, damping: 40,
                             when: 'beforeChildren',
                             delayChildren: 1}},
@@ -9,7 +9,7 @@ export const variants= {
 
      hamBurgerVariant: {
                           initial:{ rotate: 0 , opacity: 1},
-                          hidden: {opacity: [1,0], transition:{delay: 0.2}},
+                          hidden: {opacity: [1,0], transition:{delay: 0.1}},
                           clockwise:{ y: -10, rotateZ: 45, transition: {delay: 0.5}},
                           anticlockwise:{ y: 10, rotateZ: -45, transition: {delay: 0.5}}
 

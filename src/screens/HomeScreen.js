@@ -127,9 +127,8 @@ console.log('clicksign' + clickSign)
                     <motion.img variants={variants.revealVariant} initial= "initial" animate={inView?"reveal":"initial"} src={img} />
                     <motion.div  className="slideReveal2" variants={variants.slideRiseVariant} initial= "initial" animate={inView?"reveal":"initial"}>
                         <motion.p variants={variants.slideUpVariant} initial= "initial" animate={inView?"reveal":"initial"} className="slideWriting2">EDUCATION
-                        <p>fdakf kfka fkafd fkafdf fkadf fkaf fkald af dkf ;sd gda;g kga; fdkal 
-                            flsa fdlfkals fdkafl alfd alf aflda sfalsf al flkwiof whafdkl ff l;fds 
-                            dlkafdlalsdfla end
+                        <p>
+Informally the role of teacher may be taken on by anyone (e.g. when showing a colleague how to perform a specific task). In some countries.
                         </p>
                         </motion.p>
                     </motion.div>
@@ -139,9 +138,8 @@ console.log('clicksign' + clickSign)
                     <motion.img variants={variants.revealVariant} initial = "initial" animate = {inView2?"reveal":"initial"} src={img2}/>
                     <motion.div  className="slideReveal2" variants={variants.slideRiseVariant} initial= "initial" animate={inView2?"reveal":"initial"}>
                         <motion.p variants={variants.slideUpVariant} initial= "initial" animate={inView2?"reveal":"initial"} className="slideWriting2">EDUCATION
-                        <p>fdakf kfka fkafd fkafdf fkadf fkaf fkald af dkf ;sd gda;g kga; fdkal 
-                            flsa fdlfkals fdkafl alfd alf aflda sfalsf al flkwiof whafdkl ff l;fds 
-                            dlkafdlalsdfla end
+                        <p>
+Informally the role of teacher may be taken on by anyone (e.g. when showing a colleague how to perform a specific task). In some countries. 
                         </p>
                         </motion.p>
                     </motion.div>
