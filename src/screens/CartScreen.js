@@ -213,8 +213,11 @@ function CartScreen(props) {
                         
                     </button>
                     }
+                    
                     </div>
-
+                    <p>Paypal Test buyer details</p>
+                    <p>Email: olumide.koyenikan-buyer@gmail.com</p>
+                    <p>password: 12345678</p>
 
                 </div>
                 

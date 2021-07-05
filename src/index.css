@@ -1332,13 +1332,18 @@ color: #060b26;
     background-color: #060b26;
     color: white;
     padding: 20px;
-    height: 360px;
+    height: 560px;
     display: flex;
 flex-direction: column;
   }
 
     .total_cost_tab p{
       font-family: 'Teko', sans-serif;
+
+    }
+    .total_cost_tab>p{
+      font-family: 'Cabin', sans-serif;
+      font-size: 20px;
 
     }
   .summary_spacing{
