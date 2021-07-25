@@ -1,1 +1,1 @@
-export const LOCALHOST = 'http://localhost:5000'  // 'https://edudigital.herokuapp.com' 
+export const LOCALHOST = 'https://edudigitalss.herokuapp.com' //'http://localhost:5000'  

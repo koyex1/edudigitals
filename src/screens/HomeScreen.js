@@ -124,25 +124,43 @@ console.log('clicksign' + clickSign)
                 <div className="learning_image">
                     
                 <div className="marginTop10" ref={ref} >
-                    <motion.img variants={variants.revealVariant} initial= "initial" animate={inView?"reveal":"initial"} src={img} />
                     <motion.div  className="slideReveal2" variants={variants.slideRiseVariant} initial= "initial" animate={inView?"reveal":"initial"}>
                         
                     </motion.div>
-                    <motion.div variants={variants.slideUpVariant} initial= "initial" animate={inView?"reveal":"initial"} className="slideWriting2">EDUCATION
+                    <motion.div variants={variants.slideUpVariant} initial= "initial" animate={inView?"reveal":"initial"} className="slideWriting2">EXPERIENCED TEACHERS
                         <p>
-Informally the role of teacher may be taken on by anyone (e.g. when showing a colleague how to perform a specific task). In some countries.
+Informally the role of teacher may be taken on by anyone (e.g. when showing a colleague how to perform a specific task). In some countries. Informally the role of teacher may be taken on by anyone (e.g. when showing a colleague how to perform a specific task). In some countries. 
+Informally the role of teacher may be taken on by anyone (e.g. when showing a colleague how to perform a specific task). In some countries. 
+Informally the role of teacher may be taken on by anyone (e.g. when showing a colleague how to perform a specific task). In some countries. 
+
                         </p>
                         </motion.div>
                     </div>
                     
                 <div  className="marginTop10" ref={ref2} >
-                    <motion.img variants={variants.revealVariant} initial = "initial" animate = {inView2?"reveal":"initial"} src={img2}/>
                     <motion.div  className="slideReveal2" variants={variants.slideRiseVariant} initial= "initial" animate={inView2?"reveal":"initial"}>
                         
                     </motion.div>
-                    <motion.div variants={variants.slideUpVariant} initial= "initial" animate={inView2?"reveal":"initial"} className="slideWriting2">EDUCATION
+                    <motion.div variants={variants.slideUpVariant} initial= "initial" animate={inView2?"reveal":"initial"} className="slideWriting2">ALL SUBJECTS
                         <p>
+Informally the role of teacher may be taken on by anyone (e.g. when showing a colleague how to perform a specific task). In some countries. Informally the role of teacher may be taken on by anyone (e.g. when showing a colleague how to perform a specific task). In some countries. 
 Informally the role of teacher may be taken on by anyone (e.g. when showing a colleague how to perform a specific task). In some countries. 
+Informally the role of teacher may be taken on by anyone (e.g. when showing a colleague how to perform a specific task). In some countries. 
+
+                        </p>
+                        </motion.div>
+                    </div>
+
+                    <div  className="marginTop10" ref={ref2} >
+                    <motion.div  className="slideReveal2" variants={variants.slideRiseVariant} initial= "initial" animate={inView2?"reveal":"initial"}>
+                        
+                    </motion.div>
+                    <motion.div variants={variants.slideUpVariant} initial= "initial" animate={inView2?"reveal":"initial"} className="slideWriting2">IN ALL LANGUAGES
+                        <p>
+Informally the role of teacher may be taken on by anyone (e.g. when showing a colleague how to perform a specific task). In some countries. Informally the role of teacher may be taken on by anyone (e.g. when showing a colleague how to perform a specific task). In some countries. 
+Informally the role of teacher may be taken on by anyone (e.g. when showing a colleague how to perform a specific task). In some countries. 
+Informally the role of teacher may be taken on by anyone (e.g. when showing a colleague how to perform a specific task). In some countries. 
+
                         </p>
                         </motion.div>
                     </div>

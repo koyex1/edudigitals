@@ -207,6 +207,7 @@ button{
   align-self: flex-end;
   position: relative;
   z-index: 0;
+  font-size: 13px;
 }
 .dropdown_box {
   position: relative;
@@ -359,7 +360,7 @@ font-size: 18px;
 
 .edu_search_input>button{
   height: 100%;
-  top: 6px;
+  top: 4px;
   right: 3px;
   width: 20%;
   color: #ffffff;
@@ -1470,7 +1471,7 @@ color: white;
    
    .edu_search_input>button{
      width: 15%;
-     top: 2px;
+     top: -1px;
     
    }
 
@@ -1571,6 +1572,7 @@ font-size: 14px;
     }
   .edu_user_name{
     margin-right: 35px;
+    font-size: 13px;
   }
   .slideWriting2{
     font-size: 25px;
@@ -1590,7 +1592,7 @@ font-size: 14px;
 
    .edu_search_input>button{
      width: 20%;
-     top: 2px;
+     top: -1px;
     
    }
   
@@ -1771,7 +1773,7 @@ font-size: 14px;
   }
    .edu_search_input>button{
      height: 99%;
-     top: 1px;
+     top: -1px;
    
      width: 100px;
     
