@@ -5,49 +5,17 @@ import { motion } from 'framer-motion';
 function Books(props) {
     return (
         <>
-            <svg 
-	 width="100" height="100" 
-	 >
-<g>
-	<motion.path variants ={props.servicePathVariant} initial="initial" animate={props.inView5? "move":"initial"} className="growTutor" stroke="white"  strokeWidth="2"
-	 fill="none" d="M29.77,35.434h16.077v2.336H29.77V35.434z M29.77,32.2h16.077v-2.336H29.77V32.2z M37.802,24.165H29.77V26.5h8.032V24.165z
-		 M37.802,17.899H29.77v2.336h8.032V17.899z M29.77,43.308h16.077v-2.336H29.77V43.308z M54.483,10.152v39.005H26.561v0.055
-		l-0.236-0.055H0V10.152h2.327v-4.88l22.134,4.88H54.483z M52.454,28.277h-0.771h-1.976v2.755h1.976h0.771V28.277z M4.665,12.952
-		v29.036l19.561,4.317V12.952V12.49l-10.609-2.34L4.665,8.175v1.974V12.952z M13.618,46.358L3.497,44.123v2.235H13.618z
-		 M26.561,46.358h21.121V12.954h-2.689V26.79l-2.835-2.628l-2.829,2.628V12.954H26.563v33.404H26.561z M22.359,16.529l-10.736-3.575
-		l-3.765-1.253l-0.419,1.253l-0.325,0.962l14.5,4.828L22.359,16.529z M22.359,22.79l-14.5-4.828l-0.739,2.217l14.501,4.828
-		L22.359,22.79z M22.359,29.049l-14.5-4.829l-0.739,2.217l14.501,4.829L22.359,29.049z M22.359,35.311l-14.5-4.824l-0.739,2.215
-		l14.501,4.824L22.359,35.311z M22.359,40.854l-14.5-4.831L7.119,38.24l14.501,4.829L22.359,40.854z"/>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 40" x="0px" y="0px">
+	<g>
+<motion.path variants ={props.servicePathVariant} initial="initial" animate={props.inView5? "move":"initial"} fill="#1B263B" strokeWidth="0.2" stroke="#1B263B"  d="M30.78,28.14,25.21,4.8A1,1,0,0,0,24,4.06L17.2,5.68a1,1,0,0,0-.2.09V2a1,1,0,0,0-1-1H9A1,1,0,0,0,8,2V5H2A1,1,0,0,0,1,6V30a1,1,0,0,0,1,1H16a1,1,0,0,0,1-1V9.15l5,21.08A1,1,0,0,0,23,31l.23,0L30,29.35A1,1,0,0,0,30.78,28.14ZM8,29H3V7H8Zm7,0H10V3h5Zm8.74-.21L18.64,7.4,23.5,6.24l5.1,21.4Z"/>
+<motion.path variants ={props.servicePathVariant} initial="initial" animate={props.inView5? "move":"initial"} fill="#1B263B" strokeWidth="0.2"  stroke="#1B263B" d="M6.5,28h-2a1,1,0,0,1,0-2h2a1,1,0,0,1,0,2Z"/>
+<motion.path variants ={props.servicePathVariant} initial="initial" animate={props.inView5? "move":"initial"} fill="#1B263B" strokeWidth="0.2"   stroke="#1B263B" d="M6.5,25h-2a1,1,0,0,1,0-2h2a1,1,0,0,1,0,2Z"/>
+<motion.path variants ={props.servicePathVariant} initial="initial" animate={props.inView5? "move":"initial"} fill="#1B263B" strokeWidth="0.2"   stroke="#1B263B" d="M13.5,28h-2a1,1,0,0,1,0-2h2a1,1,0,0,1,0,2Z"/>
+<motion.path variants ={props.servicePathVariant} initial="initial" animate={props.inView5? "move":"initial"} fill="#1B263B" strokeWidth="0.2"   stroke="#1B263B" d="M24.73,27.5a1,1,0,0,1-.23-2l1.95-.46A1,1,0,1,1,26.91,27L25,27.47Z"/>
+<motion.path variants ={props.servicePathVariant} initial="initial" animate={props.inView5? "move":"initial"} fill="#1B263B"  strokeWidth="0.2"  stroke="#1B263B" d="M13.5,25h-2a1,1,0,0,1,0-2h2a1,1,0,0,1,0,2Z"/>
+<motion.circle variants ={props.servicePathVariant} initial="initial" animate={props.inView5? "move":"initial"} fill="#1B263B" strokeWidth="0.2"   stroke="#1B263B" cx="12.5" cy="6" r="1"/>
 </g>
 </svg>
 

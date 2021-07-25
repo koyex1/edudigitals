@@ -49,7 +49,7 @@ slideRiseVariant: {initial: {y:0 ,scale: 0.2, opacity: 0 },
 reveal: {scale: 1, y: 0, opacity:0.5,  transition:{delay: 1, duration:0.5} }
  },
  slideUpVariant: {initial: {y:200, opacity: 0 },
-reveal: {scale: 1, y: 20, opacity:1,  transition:{delay: 1.8, duration:0.5} }
+reveal: {scale: 1, y: 0, opacity:1,  transition:{delay: 1.8, duration:0.5} }
  },
 movingBallVariant: {initial: {x:0, y: 0, backgroundColor: '#ffffff' },
 move: {x:[0, 50,100,150, 100, 50, 0], y:[0,-20, 0, -20, 0,-20, 0], backgroundColor:['#ffffff','#ffffff','#060b26','#060b26','#060b26','#ffffff','#ffffff'] ,  transition:{  x:{yoyo: Infinity, duration:2},y:{yoyo:Infinity, duration:1, ease:'easeOut'}, backgroundColor:{yoyo:Infinity, duration:2, ease:'easeOut'}} }

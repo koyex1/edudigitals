@@ -221,9 +221,9 @@ function NavBar(props) {
         <div className="dropdown_content">
         
         <Link className="edu_link_account" to={`/profileedit/${userInfo.firstName}-${userInfo.lastName}`}> 
-        <i class='bx bx-info-square' ></i> Edit Profile 
+         Edit Profile 
         </Link>
-        <Link className="edu_link_account" onClick={signoutHandler} ><i className='bx bx-log-out' ></i>Logout</Link>
+        <Link className="edu_link_account" onClick={signoutHandler} >Logout</Link>
         </div>
 
         </div>

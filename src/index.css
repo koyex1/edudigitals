@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Teko:wght@300;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cabin:wght@500&display=swap');
@@ -6,6 +7,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil+Display:wght@900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Concert+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap');
+
 /*font-family: 'Dela Gothic One', cursive;*/
 /*font-family: 'New Tegomin', serif;*/
 
@@ -17,11 +20,12 @@ html{
 *, body{
 
   font-size: 1.5rem;
-  font-family: 'Cabin', sans-serif;
+  font-family: 'Nunito', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   margin: 0;
   padding: 0;
+
 }
 body{
   min-width: fit-content;
@@ -37,7 +41,7 @@ body{
 }
 
 .lang_select{
-  font-family: 'New Tegomin', serif;
+
   font-size: 18px;
   font-weight: bold;
   height: 40px;
@@ -193,7 +197,7 @@ button{
 }
 .users_nav a{
   font-size: 15px;
-  font-family: 'Dela Gothic One', cursive;
+  font-family: 'Luckiest Guy', cursive;  
  
 }
 .edu_user_name{
@@ -234,7 +238,7 @@ button{
 
 .dropdown_content a{
   padding: 10px;
-  font-family: 'New Tegomin', serif;
+
 
 }
 .dropdown_box:hover .dropdown_content{
@@ -257,7 +261,7 @@ display:flex;
 }
 .sign_in_up a{
   font-size: 15px;
-  font-family: 'Dela Gothic One', cursive;
+  font-family: 'Luckiest Guy', cursive;  
  
 }
 .bx-right-arrow-alt{
@@ -290,7 +294,7 @@ display:flex;
 
 
 .search_option2{
-  font-family: 'Akaya Kanadaka', cursive;
+  font-family: 'Luckiest Guy', cursive;
 
 }
 .bx-search{
@@ -317,23 +321,24 @@ background-color:#f0f0f0;
   margin-right: 8px;
 }
 .edu_search_spinner{
-  font-family: 'New Tegomin', serif;
+
   padding: 40px;
-  padding-left: 10px;
   font-weight: bold;
+  text-align: center;
   font-size: 20px;
+  font-family: 'Luckiest Guy', cursive;
 
 }
 .edu_search_input{
   padding-left: 30px;
   height: 50px;
   width: 100%;
-  font-family: 'Akaya Kanadaka', cursive;
+  font-family: 'Luckiest Guy', cursive;
   font-size: 14px;
 }
 
 .side_side p{
-  font-family: 'Akaya Kanadaka', cursive;
+  font-family: 'Luckiest Guy', cursive;
   font-size: 18px;
 }
 
@@ -346,6 +351,9 @@ background-color:#f0f0f0;
  border-bottom-left-radius: 20px;
  border: 1px solid #dbdbdb;
  outline: none;
+ font-family: 'Nunito', sans-serif;
+font-weight: bold;
+font-size: 18px;
  
 }
 
@@ -359,7 +367,7 @@ background-color:#f0f0f0;
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
   font-size: 20px;
-  font-family: 'New Tegomin', serif;
+
   position: relative;
  
 }
@@ -374,7 +382,7 @@ background-color:#f0f0f0;
   height: 100px;
   border: none;
   font-size: 11px;
-  font-family: 'Akaya Kanadaka', cursive;
+  font-family: 'Luckiest Guy', cursive;
 
 }
 
@@ -382,6 +390,10 @@ background-color:#f0f0f0;
   width: 40%;
   height: 40px;
   margin-right: 20px;
+  font-family: 'Nunito', sans-serif;
+  font-weight: bold;
+  color: black;
+
 }
 .search_container{
   background-color: white;
@@ -394,7 +406,7 @@ background-color:#f0f0f0;
 
 .edu_slider{
   width: 95%;
-  font-family: 'Akaya Kanadaka', cursive;  
+  font-family: 'Luckiest Guy', cursive;  
 
 }
 .slider_position{
@@ -464,9 +476,10 @@ height: 110%;
 }
 .tutor_name{
   font-size: 20px;
-  font-family: 'New Tegomin', serif;
+  font-family: 'Luckiest Guy', cursive;  
   color: #060b26;
   font-weight: bold;
+  letter-spacing: 2px;
 }
 .profile_info .space{
   margin-left: 10px;
@@ -540,12 +553,13 @@ object-fit: fill;
 }
 .services_body{
   font-size: 20px;
-  background-color: #060b26;
+  background-color: #1B263B;
   color: white;
   padding: 25px;
-  font-family: 'Akaya Kanadaka', cursive;  
+  font-family: 'Luckiest Guy', cursive;  
   margin: 20px;
   border-radius: 3px;
+  letter-spacing: 2px;
 }
 .services_button{
   display: flex;
@@ -560,23 +574,25 @@ background-color:violet;
   top: 0;
   position: absolute;
   width: 100%;
-  height: 100%;
-  background-color: black;
+  background-color: #778DA9;
   opacity: 0;
   z-index: 0;
 }
 .slideWriting2{
   font-size: 18px;
-  color: white;
+  color: #1B263B;
   opacity: 1;
+  font-weight: bold;
   align-self: flex-end;
-  font-family: 'Akaya Kanadaka', cursive;
+  font-family: 'Luckiest Guy', cursive;
   z-index: 20;
-  padding: 10px;
 
 position: relative;
   margin-left: 10px;
 
+}
+.marginTop10{
+  margin-top: 10px;
 }
 
 .slideWriting2>p{
@@ -588,7 +604,7 @@ color: black;
 .services_engine{
   padding-left: 10px;
   padding-bottom: 20px;
-  background-color: #c83737;
+  background-color: #415A77;
   margin-left: 20px;
   margin-right: 20px;
   border-radius: 2px;
@@ -613,7 +629,7 @@ color: black;
   border-radius: 5px;
   font-weight: bolder;
   border: 3px solid #060b26;
-  font-family: 'New Tegomin', serif;
+
   font-size: 11px;
   cursor: pointer;
   
@@ -631,8 +647,8 @@ color: black;
   margin-top: 5px;
   font-size: 90px;
   line-height: normal;
-  color: black;
-  font-family: 'Concert One', cursive;
+  color: #0D1B2A;
+  font-family: 'Luckiest Guy', cursive;
         padding-left: 20px;
   position: relative;
   z-index: 2;
@@ -684,12 +700,18 @@ font-family: 'Zilla Slab Highlight', cursive;
 /*service cards*/
 .item1{
   grid-area: item1;
+  border: solid 4px #778DA9 ;
+
 }
 .item2{
   grid-area: item2;
+  border: solid 4px #415A77 ;
+
 }
 .item3{
   grid-area: item3;
+  border: solid 4px #1B263B ;
+
 }
 
 .edu_cards{
@@ -710,27 +732,34 @@ font-family: 'Zilla Slab Highlight', cursive;
 .edu_card{
   border-radius: 4px;
   margin-top: 40px;
-  background-color: #060b26;
   width: 200px;
-  padding-top: 30px;
-  padding-bottom: 30px;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
- 
   color: white;
-  
 }
 .edu_card_content{
+ 
+  font-family: 'Luckiest Guy', cursive;
   font-size: 20px;
-  font-family: 'Akaya Kanadaka', cursive;
+  color:#060b30;
+  font-weight: bold;
+  padding: 10px 10px;
+}
+.card_text{
+  color: #060b30;
+  padding: 10px 10px;
 }
 .edu_card_image{
+  height: 120px;
+  width: 120px;
+  padding: 10px 10px;
+
 }
 .edu_card_image>img{
-height: 80px;
-width: 80px;
+height: 100px;
+width: 100px;
 }
 
 /*verify page*/
@@ -764,7 +793,7 @@ width: 80px;
   width: 115px;
   padding: 3px;
   border-radius: 5px;
-  font-family: 'New Tegomin', serif;
+
 
 }
 
@@ -806,6 +835,8 @@ font-weight: bold;
   width: 80%;
   padding-left: 10px;
   border: 1px solid #dbdbdb;
+  font-weight: bold;
+  color: black;
   }
   .cant_change{
     background-color: #e8e8e8;
@@ -842,15 +873,14 @@ footer{
   padding-top:20px;
   color: #060b26;
   text-align: center;
-  font-weight: bold;
   margin-top: 20px;
 
 
 
 }
 .footer_section>p{
-  font-family: 'Akaya Kanadaka', cursive;
-  font-size: 14px ;
+  font-family: 'Luckiest Guy', cursive;
+  font-size: 16px ;
 }
 .footer_margin_left>div{
   display: inline-block;
@@ -905,6 +935,8 @@ footer hr{
   border-radius: 5px;
   border: 1px solid #dbdbdb;
   width: 100%;
+  font-weight: bold;
+  color: black;
 }
 .adjust_signin{
   width: 100%;
@@ -918,6 +950,8 @@ footer hr{
   width: 100%;
   padding-left: 10px;
   border: 1px solid #dbdbdb;
+  font-weight: bold;
+  color: black;
   }
 .welcome{
   font-family: 'Zilla Slab Highlight', cursive; 
@@ -960,15 +994,16 @@ footer hr{
   text-align: center;
   font-size: 25px;
   font-weight: bold;
-  font-family: 'New Tegomin', serif;
+  font-family: 'Luckiest Guy', cursive;
     padding-bottom: 20px;
+    letter-spacing: 1px;
 }
 .forgotten_password{
   text-align: center;
   font-weight: bold;
   font-size: 20px;
   margin-top: 20px;
-  font-family: 'New Tegomin', serif;
+
   color:#060b26;
 
 }
@@ -1030,7 +1065,7 @@ input[type="file"]{
   border: 3px solid #c83737;
   width: 100%;
   border-radius: 5px;
-  font-family: 'New Tegomin', serif;
+
   font-weight: bold;
   padding: 5px;
 }
@@ -1203,12 +1238,12 @@ color: #060b26;
 .title_1{
   font-size: 25px;
   color: #060b26;
-  font-family: 'Dela Gothic One', cursive;
+  font-family: 'Luckiest Guy', cursive;
 }
 .title_3{
   font-size: 17px;
   color: #060b26;
-  font-family: 'Dela Gothic One', cursive;
+  font-family: 'Luckiest Guy', cursive;  
 }
 
 .image_container .profile_dp{
@@ -1222,7 +1257,7 @@ color: #060b26;
   font-size: 20px;
   padding: 25px;
   font-weight: bold;
-  font-family: 'New Tegomin', serif;
+
 
 }
 .review_container{
@@ -1255,17 +1290,20 @@ color: #060b26;
   
 }
 .no_reviews{
-  font-family: 'New Tegomin', serif;
   text-align: center;
   padding: 40px;
   font-size: 20px;
+  font-family: 'Luckiest Guy', cursive; 
+  font-weight: bold; 
+  letter-spacing: 1px;
+
 }
 .reviewer>.text{
-  font-family: 'New Tegomin', serif;
+
   font-size: 18px;
 }
 .rating_style{
-  font-family: 'Akaya Kanadaka', cursive;  
+  font-family: 'Luckiest Guy', cursive;  
 
 }
 
@@ -1370,7 +1408,7 @@ flex-direction: column;
   border-radius: 5px;
   font-weight: bolder;
   border: 3px solid #060b26;
-  font-family: 'New Tegomin', serif;
+
   }
 
 .cart_qty_cost{
@@ -1393,7 +1431,7 @@ flex-direction: column;
   border-radius: 5px;
   font-weight: bolder;
   border: 3px solid #060b26;
-  font-family: 'New Tegomin', serif;
+
   margin-left: 6px;
 }
 .edu_checkout{
@@ -1458,7 +1496,7 @@ color: white;
 
   }
   .search_option1>div{
-    font-family: 'Akaya Kanadaka', cursive;
+    font-family: 'Luckiest Guy', cursive;
   }
   .image_container{
   }
@@ -1667,7 +1705,7 @@ font-size: 14px;
 
 
   .lang_select{
-    font-family: 'New Tegomin', serif;
+  
     font-weight: bold;
     
     color: white;
@@ -1706,15 +1744,8 @@ font-size: 14px;
   align-items: center;
   flex-direction: row;
  }
- .edu_cards{
-  grid-template-areas: 'item1 item2 item3' ;
- 
-  }
-  .edu_card{
-    width: 250px;
-    margin-left: 20px;
-    height: 200px;
-  }
+
+
    }
 /*---------------950 PX-------------*/
 @media only screen and (min-width: 850px) {

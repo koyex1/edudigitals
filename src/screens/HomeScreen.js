@@ -123,26 +123,28 @@ console.log('clicksign' + clickSign)
                 </div>
                 <div className="learning_image">
                     
-                <div  ref={ref} >
+                <div className="marginTop10" ref={ref} >
                     <motion.img variants={variants.revealVariant} initial= "initial" animate={inView?"reveal":"initial"} src={img} />
                     <motion.div  className="slideReveal2" variants={variants.slideRiseVariant} initial= "initial" animate={inView?"reveal":"initial"}>
-                        <motion.p variants={variants.slideUpVariant} initial= "initial" animate={inView?"reveal":"initial"} className="slideWriting2">EDUCATION
+                        
+                    </motion.div>
+                    <motion.div variants={variants.slideUpVariant} initial= "initial" animate={inView?"reveal":"initial"} className="slideWriting2">EDUCATION
                         <p>
 Informally the role of teacher may be taken on by anyone (e.g. when showing a colleague how to perform a specific task). In some countries.
                         </p>
-                        </motion.p>
-                    </motion.div>
+                        </motion.div>
                     </div>
                     
-                <div  ref={ref2} >
+                <div  className="marginTop10" ref={ref2} >
                     <motion.img variants={variants.revealVariant} initial = "initial" animate = {inView2?"reveal":"initial"} src={img2}/>
                     <motion.div  className="slideReveal2" variants={variants.slideRiseVariant} initial= "initial" animate={inView2?"reveal":"initial"}>
-                        <motion.p variants={variants.slideUpVariant} initial= "initial" animate={inView2?"reveal":"initial"} className="slideWriting2">EDUCATION
+                        
+                    </motion.div>
+                    <motion.div variants={variants.slideUpVariant} initial= "initial" animate={inView2?"reveal":"initial"} className="slideWriting2">EDUCATION
                         <p>
 Informally the role of teacher may be taken on by anyone (e.g. when showing a colleague how to perform a specific task). In some countries. 
                         </p>
-                        </motion.p>
-                    </motion.div>
+                        </motion.div>
                     </div>
                     
                     
@@ -156,6 +158,8 @@ Informally the role of teacher may be taken on by anyone (e.g. when showing a co
                         <Tutor inView4={inView4} servicePathVariant={variants.servicePathVariant} />
                         
                     </div>
+                    <div className="card_text">Informally the role of teacher may be taken on by anyone (e.g. when showing a colleague how to perform a specific task). In some countries. 
+</div>
                     <div className="edu_card_content">
                         EXPERIENCED TEACHERS
                     </div>
@@ -166,7 +170,11 @@ Informally the role of teacher may be taken on by anyone (e.g. when showing a co
                     <div className="edu_card_image">
                     <Books inView5={inView5} servicePathVariant={variants.servicePathVariant} />
                     </div>
-                    <div className="edu_card_content ">
+
+                    <div className="card_text">Informally the role of teacher may be taken on by anyone (e.g. when showing a colleague how to perform a specific task). In some countries. 
+</div>
+
+                    <div className="edu_card_content">
                         ALL SUBJECTS
                     </div>
                 </motion.div>
@@ -176,8 +184,10 @@ Informally the role of teacher may be taken on by anyone (e.g. when showing a co
                     <div className="edu_card_image">
                     <Earth inView6={inView6} servicePathVariant={variants.servicePathVariant} />
                     </div>
+                    <div className="card_text">Informally the role of teacher may be taken on by anyone (e.g. when showing a colleague how to perform a specific task). In some countries. 
+</div>
                     <div className="edu_card_content">
-                        LESSONS IN ALL LANGUAGES
+                        IN ALL LANGUAGES
                     </div>
                 </motion.div>
                 </div>
