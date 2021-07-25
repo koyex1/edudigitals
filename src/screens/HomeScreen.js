@@ -29,6 +29,9 @@ function HomeScreen(props) {
     const [ref, inView ] = useInView({
         threshold: 0.2
     })
+    const [ref3, inView3 ] = useInView({
+        threshold: 0.2
+    })
 
     const [ref4, inView4 ] = useInView({
         threshold: 0.2
@@ -151,11 +154,11 @@ Informally the role of teacher may be taken on by anyone (e.g. when showing a co
                         </motion.div>
                     </div>
 
-                    <div  className="marginTop10" ref={ref2} >
-                    <motion.div  className="slideReveal2" variants={variants.slideRiseVariant} initial= "initial" animate={inView2?"reveal":"initial"}>
+                    <div  className="marginTop10" ref={ref3} >
+                    <motion.div  className="slideReveal2" variants={variants.slideRiseVariant} initial= "initial" animate={inView3?"reveal":"initial"}>
                         
                     </motion.div>
-                    <motion.div variants={variants.slideUpVariant} initial= "initial" animate={inView2?"reveal":"initial"} className="slideWriting2">IN ALL LANGUAGES
+                    <motion.div variants={variants.slideUpVariant} initial= "initial" animate={inView3?"reveal":"initial"} className="slideWriting2">IN ALL LANGUAGES
                         <p>
 Informally the role of teacher may be taken on by anyone (e.g. when showing a colleague how to perform a specific task). In some countries. Informally the role of teacher may be taken on by anyone (e.g. when showing a colleague how to perform a specific task). In some countries. 
 Informally the role of teacher may be taken on by anyone (e.g. when showing a colleague how to perform a specific task). In some countries. 
